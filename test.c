@@ -73,4 +73,3 @@ print_data(head1);
 
 return(0);
 }
-kjrhg
