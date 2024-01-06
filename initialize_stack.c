@@ -48,10 +48,10 @@ int temp;
         i++;
     }
 
-printf("Original:\n");
+printf("/////////////////////////Original:\n");
 printf("Stack_a \n");
 print_data(stack_a);
-printf("\n");
+//printf("\n");
 
 /////////////////////////////////////////
 // stack_a = push_b(data, stack_a);
@@ -68,11 +68,20 @@ printf("\n");
 
 
 
-/////////////// POP_A FROM STACK_A AND PUSH TO STACK_B
+/////////////// POP_A FROM STACK_A AND PUSH TO STACK_B  1. 
+printf("////////////////////////Comands");
 temp= pop_a(&stack_a);
 push_b(temp, &stack_b);
 
-//////ONE MORE TIME
+//////ONE MORE TIME 2. 
+temp= pop_a(&stack_a);
+push_b(temp, &stack_b);
+
+//////ONE MORE TIME 3. 
+temp= pop_a(&stack_a);
+push_b(temp, &stack_b);
+
+//////ONE MORE TIME 4.
 temp= pop_a(&stack_a);
 push_b(temp, &stack_b);
 
@@ -81,13 +90,23 @@ temp= pop_b(&stack_b);
 push_a(temp, &stack_a);
 
 
-
-printf("Stack_b\n");
+printf("\n//////////////////////Stack_b\n");
 print_data(stack_b);
 
 
-printf("Stack_a\n");
+printf("/////////////////////////Stack_a\n");
 print_data(stack_a);
+
+
+from_last_to_first_a(&stack_a);
+printf("/////////////////////////Stack_a after last became fist node\n");
+print_data(stack_a);
+
+from_last_to_first_b(&stack_b);
+printf("/////////////////////////Stack_b after last became fist node\n");
+print_data(stack_b);
+
+
 // printf("Sorted :\n");
 // swap_a(head1);
 // printf("Sorted :\n");

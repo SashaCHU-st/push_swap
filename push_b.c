@@ -15,7 +15,7 @@ void push_b(int data, struct node** stack_b)
 
 	new->link= *stack_b;
 	*stack_b = new;
-	printf("pb");
+	printf("\npb");
 	// stack_a->link = stack_b;
 	// stack_a = stack_b;
 	// return (stack_a);
@@ -55,7 +55,7 @@ void push_a(int data, struct node** stack_a)
 
 	new->link= *stack_a;
 	*stack_a = new;
-	printf("pa");
+	printf("\npa");
 	// stack_a->link = stack_b;
 	// stack_a = stack_b;
 	// return (stack_a);
