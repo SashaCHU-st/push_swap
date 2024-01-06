@@ -22,7 +22,6 @@ $(NAME): $(OBJ)
 
 clean:
 	rm -rf $(OBJ)
-	@rm  -rf .bonus
 
 fclean: clean
 	rm -f $(NAME)
