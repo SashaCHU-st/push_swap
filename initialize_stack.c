@@ -1,3 +1,15 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   initialize_stack.c                                 :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: aheinane <aheinane@student.hive.fi>        +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2024/01/06 15:16:30 by aheinane          #+#    #+#             */
+/*   Updated: 2024/01/06 15:25:30 by aheinane         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include <stdio.h>
 #include <stdlib.h>
 #include "push_swap.h"
@@ -116,6 +128,16 @@ print_data(stack_a);
 
 printf("/////////////////////////Stack_b after first became last node\n");
 print_data(stack_b);
+
+printf("////////////////////////swaping stack_a and  \n");
+swap_a(&stack_a);
+swap_b(&stack_b);
+
+printf("////////////////////////swaping stack_a\n");
+print_data(stack_a);
+printf("////////////////////////swaping stack_b\n");
+print_data(stack_b);
+
 
 // printf("Sorted :\n");
 // swap_a(head1);

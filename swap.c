@@ -1,54 +1,44 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   reverse_from_last.c                                :+:      :+:    :+:   */
+/*   swap.c                                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: aheinane <aheinane@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/01/06 15:17:03 by aheinane          #+#    #+#             */
-/*   Updated: 2024/01/06 15:19:21 by aheinane         ###   ########.fr       */
+/*   Created: 2024/01/06 15:20:16 by aheinane          #+#    #+#             */
+/*   Updated: 2024/01/06 15:25:46 by aheinane         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <stdio.h>
 #include "push_swap.h"
 
-void	from_last_to_first_a(struct node **stack_a)
+void	swap_a(struct node **stack_a)
 {
-	struct node	*last;
-	struct node	*ptr1;
+	struct node	*temp;
+	struct node	*newhead;
 
-	last = NULL;
-	ptr1 = *stack_a;
+	temp = (*stack_a)->link->link;
+	newhead = (*stack_a)->link;
 	if (*stack_a == NULL || (*stack_a)->link == NULL)
 		return ;
-	while (ptr1->link != NULL)
-	{
-		last = ptr1;
-		ptr1 = ptr1->link;
-	}
-	last->link = NULL;
-	ptr1->link = *stack_a;
-	*stack_a = ptr1;
-	printf("\nrra");
+	newhead->link = (*stack_a);
+	(*stack_a)->link = temp;
+	(*stack_a) = newhead;
+	printf("sa\n");
 }
 
-void	from_last_to_first_b(struct node **stack_b)
+void	swap_b(struct node **stack_b)
 {
-	struct node	*last;
-	struct node	*ptr1;
+	struct node	*temp;
+	struct node	*newhead;
 
-	last = NULL;
-	ptr1 = *stack_b;
+	temp = (*stack_b)->link->link;
+	newhead = (*stack_b)->link;
 	if (*stack_b == NULL || (*stack_b)->link == NULL)
 		return ;
-	while (ptr1->link != NULL)
-	{
-		last = ptr1;
-		ptr1 = ptr1->link;
-	}
-	last->link = NULL;
-	ptr1->link = *stack_b;
-	*stack_b = ptr1;
-	printf("\nrrb\n");
+	newhead->link = (*stack_b);
+	(*stack_b)->link = temp;
+	(*stack_b) = newhead;
+	printf("sb\n");
 }

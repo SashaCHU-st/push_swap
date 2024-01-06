@@ -1,5 +1,17 @@
-# include <stdlib.h>
-# include <unistd.h>
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   push_swap_utils.c                                  :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: aheinane <aheinane@student.hive.fi>        +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2024/01/06 15:16:25 by aheinane          #+#    #+#             */
+/*   Updated: 2024/01/06 15:19:39 by aheinane         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
+#include <stdlib.h>
+#include <unistd.h>
 #include "push_swap.h"
 
 int	ft_atoi(const char *str)

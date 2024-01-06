@@ -6,7 +6,7 @@
 /*   By: aheinane <aheinane@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/04 12:50:55 by aheinane          #+#    #+#             */
-/*   Updated: 2024/01/06 13:16:58 by aheinane         ###   ########.fr       */
+/*   Updated: 2024/01/06 15:05:07 by aheinane         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,23 +17,22 @@
 # include <unistd.h>
 
 typedef struct node {
-	int data;
-	struct node *link;
+	int			data;
+	struct node	*link;
 }t_node;
 
-
-
-int	ft_atoi(const char *str);
-void appendNode(struct node **head, int data);
-void push_b(int data, struct node** stack_b);
-void print_data(struct node *head);
-int pop_a(struct node** stack_b);
-void push_a(int data, struct node** stack_a);
-int pop_b(struct node** stack_a);
-void from_last_to_first_a(struct node **stack_a);
-void from_last_to_first_b(struct node **stack_b);
-void from_first_to_last_a(struct node **stack_a);
-void from_first_to_last_b(struct node **stack_b);
-
+int		ft_atoi(const char *str);
+void	appendNode(struct node **head, int data);
+void	push_b(int data, struct node **stack_b);
+void	print_data(struct node *head);
+int		pop_a(struct node **stack_b);
+void	push_a(int data, struct node **stack_a);
+int		pop_b(struct node **stack_a);
+void	from_last_to_first_a(struct node **stack_a);
+void	from_last_to_first_b(struct node **stack_b);
+void	from_first_to_last_a(struct node **stack_a);
+void	from_first_to_last_b(struct node **stack_b);
+void	swap_a(struct node **stack_a);
+void	swap_b(struct node **stack_b);
 
 #endif
