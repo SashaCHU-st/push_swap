@@ -1,5 +1,7 @@
 # include <stdlib.h>
 # include <unistd.h>
+#include "push_swap.h"
+
 int	ft_atoi(const char *str)
 {
 	size_t	i;

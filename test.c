@@ -1,11 +1,43 @@
 #include <stdio.h>
 #include <stdlib.h>
 
+int	ft_atoi(const char *str)
+{
+	size_t	i;
+	long	number;
+	int		sign;
+
+	i = 0;
+	number = 0;
+	sign = 1;
+	while ((str[i] >= 9 && str[i] <= 13) || str[i] == 32)
+		i++;
+	if (str[i] == 45)
+		sign = -1;
+	if (str[i] == 45 || str[i] == 43)
+		i++;
+	while (str[i] >= 48 && str[i] <= 57)
+	{
+		number = number * 10 + (str[i] - 48);
+		if (number < 0)
+		{
+			if (sign > 0)
+				return (-1);
+			return (0);
+		}
+		i++;
+	}
+	return (number * sign);
+}
 struct node {
 	int data;
-    
 	struct node *link;
 };
+struct stack_b {
+	int data2;
+	struct stack_b *link2;
+};
+
 void appendNode(struct node **head, int data) {
     struct node *newNode = (struct node *)malloc(sizeof(struct node));
     newNode->data = data;
@@ -34,8 +66,9 @@ void print_data(struct node *head)
 		ptr= ptr->link;
 	}
 }
-void sort(struct node *head)
+void swap_a(struct node *head)
 {
+    ///// swaping first two nodes
     struct node * i;
 	struct node * j;
     int temp;
@@ -55,10 +88,12 @@ void sort(struct node *head)
 		}
         i=i->link;
 }
+printf("Operation sa\n");
 }
 
 int main(int argc, char *argv[])
 {
+////////////////////////MANUALY
 // struct node *head1 = malloc(sizeof(struct node));
 // head1->data = 74;
 // head1->link = NULL;
@@ -83,22 +118,22 @@ int main(int argc, char *argv[])
 // head2->data = 453;
 // head2->link = NULL;
 // head1->link->link->link->link = head2;
+/////////////////////////////////////////////////////////
 struct node *head1 = NULL;
-
-    // Проходим по аргументам и добавляем их в список
-    for (int i = 1; i < argc; i++) {
-        int data = atoi(argv[i]); // Преобразуем аргумент в целое число
+int i = 1;
+    while (i < argc)
+    {
+        int data = ft_atoi(argv[i]); // Преобразуем аргумент в целое число
         appendNode(&head1, data);
+        i++;
     }
 
-//     // Выводим список
-//     printf("Linked List: ");
-//    // printList(head);
 printf("Original:\n");
 print_data(head1);
-printf("Sorted :\n");
-sort(head1);
-print_data(head1);		
+// printf("Sorted :\n");
+// swap_a(head1);
+// printf("Sorted :\n");
+// print_data(head1);		
 
 return(0);
 }
