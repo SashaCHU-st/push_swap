@@ -16,7 +16,7 @@ void from_last_to_first_a(struct node **stack_a)
 	last->link= NULL;
 	ptr1->link= *stack_a;
 	*stack_a = ptr1;
-	printf("\nra");
+	printf("\nrra");
 }
 void from_last_to_first_b(struct node **stack_b)
 {
@@ -33,5 +33,5 @@ void from_last_to_first_b(struct node **stack_b)
 	last->link= NULL;
 	ptr1->link= *stack_b;
 	*stack_b = ptr1;
-	printf("\nrb");
+	printf("\nrrb\n");
 }

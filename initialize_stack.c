@@ -97,15 +97,25 @@ print_data(stack_b);
 printf("/////////////////////////Stack_a\n");
 print_data(stack_a);
 
-
+printf("////////////////////////Reverse Comands from last to front");
 from_last_to_first_a(&stack_a);
+from_last_to_first_b(&stack_b);
+
 printf("/////////////////////////Stack_a after last became fist node\n");
 print_data(stack_a);
 
-from_last_to_first_b(&stack_b);
 printf("/////////////////////////Stack_b after last became fist node\n");
 print_data(stack_b);
 
+printf("////////////////////////Reverse Comands from front to last");
+from_first_to_last_a(&stack_a);
+from_first_to_last_b(&stack_b);
+
+printf("/////////////////////////Stack_a after first became last node\n");
+print_data(stack_a);
+
+printf("/////////////////////////Stack_b after first became last node\n");
+print_data(stack_b);
 
 // printf("Sorted :\n");
 // swap_a(head1);
