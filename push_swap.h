@@ -6,7 +6,7 @@
 /*   By: aheinane <aheinane@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/04 12:50:55 by aheinane          #+#    #+#             */
-/*   Updated: 2024/01/06 15:05:07 by aheinane         ###   ########.fr       */
+/*   Updated: 2024/01/06 15:36:48 by aheinane         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,7 +22,7 @@ typedef struct node {
 }t_node;
 
 int		ft_atoi(const char *str);
-void	appendNode(struct node **head, int data);
+void	append_node(struct node **head, int data);
 void	push_b(int data, struct node **stack_b);
 void	print_data(struct node *head);
 int		pop_a(struct node **stack_b);
