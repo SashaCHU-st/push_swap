@@ -6,7 +6,7 @@
 /*   By: aheinane <aheinane@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/06 15:34:12 by aheinane          #+#    #+#             */
-/*   Updated: 2024/01/06 15:37:36 by aheinane         ###   ########.fr       */
+/*   Updated: 2024/01/07 13:39:19 by aheinane         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,7 +27,7 @@ void	append_node(struct node **head, int data)
 		*head = new_node;
 	else
 	{
-		while (last->link != NULL) 
+		while (last->link != NULL)
 			last = last->link;
 		last->link = new_node;
 	}

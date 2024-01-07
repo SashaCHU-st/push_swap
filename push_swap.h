@@ -6,7 +6,7 @@
 /*   By: aheinane <aheinane@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/04 12:50:55 by aheinane          #+#    #+#             */
-/*   Updated: 2024/01/06 15:36:48 by aheinane         ###   ########.fr       */
+/*   Updated: 2024/01/07 13:37:00 by aheinane         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,16 +23,22 @@ typedef struct node {
 
 int		ft_atoi(const char *str);
 void	append_node(struct node **head, int data);
-void	push_b(int data, struct node **stack_b);
 void	print_data(struct node *head);
-int		pop_a(struct node **stack_b);
-void	push_a(int data, struct node **stack_a);
-int		pop_b(struct node **stack_a);
-void	from_last_to_first_a(struct node **stack_a);
-void	from_last_to_first_b(struct node **stack_b);
-void	from_first_to_last_a(struct node **stack_a);
-void	from_first_to_last_b(struct node **stack_b);
-void	swap_a(struct node **stack_a);
-void	swap_b(struct node **stack_b);
+void	push(int data, struct node **stack);
+void	from_last_to_first(struct node **stack);
+void	from_first_to_last(struct node **stack);
+void	rrr(struct node **stack_a, struct node **stack_b);
+void	rr(struct node **stack_a, struct node **stack_b);
+void	ss(struct node **stack_a, struct node **stack_b);
+void	sa(struct node **stack_a);
+void	sb(struct node **stack_b);
+void	rra(struct node **stack);
+void	rrb(struct node **stack);
+void	ra(struct node **stack);
+void	rb(struct node **stack);
+void	pa(int data, struct node **stack);
+void	pb(int data, struct node **stack);
+int		pop(struct node **stack);
+
 
 #endif
