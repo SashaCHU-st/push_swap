@@ -6,7 +6,7 @@
 /*   By: aheinane <aheinane@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/06 15:34:12 by aheinane          #+#    #+#             */
-/*   Updated: 2024/01/07 13:39:19 by aheinane         ###   ########.fr       */
+/*   Updated: 2024/01/08 14:25:06 by aheinane         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,6 +22,7 @@ void	append_node(struct node **head, int data)
 	last = *head;
 	new_node = malloc(sizeof(struct node));
 	new_node->data = data;
+	new_node->rank = 0;
 	new_node->link = NULL;
 	if (*head == NULL)
 		*head = new_node;
@@ -30,6 +31,33 @@ void	append_node(struct node **head, int data)
 		while (last->link != NULL)
 			last = last->link;
 		last->link = new_node;
+	}
+}
+
+void assignRanks(struct node** stack)
+{
+	struct node*	current;
+	struct node*	index;
+
+	current = *stack;
+	while (current != NULL)
+	{
+		current->rank = 1;
+		current = current->link;
+	}
+	current = *stack;
+	while (current != NULL)
+	{
+		index = current->link;
+		while (index != NULL)
+		{
+			if (current->data < index->data)
+				index->rank++;
+			else if (current->data > index->data)
+				current->rank++;
+			index = index->link;
+		}
+		current = current->link;
 	}
 }
 
@@ -44,7 +72,7 @@ void	print_data(struct node *head)
 	ptr = head;
 	while (ptr)
 	{
-		printf("%d\n", ptr->data);
+		printf("%d, %d\n", ptr->data, ptr->rank);
 		ptr = ptr->link;
 	}
 }

@@ -66,7 +66,7 @@ void print_data(struct node *head)
 		ptr= ptr->link;
 	}
 }
-void swap_a(struct node *head)
+void sorting(struct node *head)
 {
     ///// swaping first two nodes
     struct node * i;
