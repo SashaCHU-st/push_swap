@@ -6,7 +6,7 @@
 /*   By: aheinane <aheinane@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/06 15:34:12 by aheinane          #+#    #+#             */
-/*   Updated: 2024/01/08 14:25:06 by aheinane         ###   ########.fr       */
+/*   Updated: 2024/01/08 15:44:19 by aheinane         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,10 +34,10 @@ void	append_node(struct node **head, int data)
 	}
 }
 
-void assignRanks(struct node** stack)
+void	assign_ranks(struct node **stack)
 {
-	struct node*	current;
-	struct node*	index;
+	struct node	*current;
+	struct node	*index;
 
 	current = *stack;
 	while (current != NULL)

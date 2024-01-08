@@ -6,7 +6,7 @@
 /*   By: aheinane <aheinane@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/04 12:50:55 by aheinane          #+#    #+#             */
-/*   Updated: 2024/01/08 13:52:03 by aheinane         ###   ########.fr       */
+/*   Updated: 2024/01/08 15:45:29 by aheinane         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,7 +24,7 @@ typedef struct node {
 
 int		ft_atoi(const char *str);
 void	append_node(struct node **head, int data);
-void	assignRanks(struct node** head);
+void	assign_ranks(struct node **stack);
 void	print_data(struct node *head);
 void	push(int data, struct node **stack);
 void	from_last_to_first(struct node **stack);
