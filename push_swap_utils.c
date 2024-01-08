@@ -6,7 +6,7 @@
 /*   By: aheinane <aheinane@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/06 15:16:25 by aheinane          #+#    #+#             */
-/*   Updated: 2024/01/06 15:19:39 by aheinane         ###   ########.fr       */
+/*   Updated: 2024/01/08 18:25:19 by aheinane         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -41,4 +41,43 @@ int	ft_atoi(const char *str)
 		i++;
 	}
 	return (number * sign);
+}
+int	ft_lstsize(struct node *lst)
+{
+	int	i;
+
+	i = 0;
+	while (lst != 0)
+	{
+		i++;
+		if (lst -> link)
+			lst = lst -> link;
+		else
+			break ;
+	}
+	return (i);
+}
+
+void sorting(struct node **head)
+{
+    ///// swaping first two nodes
+    struct node * i;
+	struct node * j;
+    int temp;
+    i = *head;
+    while (i->link!=NULL)
+    {
+		j=i->link;
+		while(j!=NULL)
+		{
+			if(i->rank > j->rank)
+			{
+				temp=i->rank;
+				i->rank=j->rank;
+				j->rank=temp;
+			}
+			j=j->link;
+		}
+        i=i->link;
+}
 }

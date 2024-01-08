@@ -88,7 +88,6 @@ void sorting(struct node *head)
 		}
         i=i->link;
 }
-printf("Operation sa\n");
 }
 
 int main(int argc, char *argv[])
