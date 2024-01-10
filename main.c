@@ -6,7 +6,7 @@
 /*   By: aheinane <aheinane@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/06 15:29:05 by aheinane          #+#    #+#             */
-/*   Updated: 2024/01/10 15:53:08 by aheinane         ###   ########.fr       */
+/*   Updated: 2024/01/10 17:00:49 by aheinane         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,7 +23,6 @@ int i = 1;
 int data;
 int temp;
 int size = 1;
-int size_b = 1;
 /// if argc = 3 togda ando simple function
     while (i < argc)
 	{
@@ -74,10 +73,37 @@ while (size > 3)
     }
 }
 size = ft_lstsize(stack_a);
-if (size <= 3)
+if (size == 3)
     three_sorting(&stack_a);
-if (size_b == 2)
-    
+size = ft_lstsize(stack_b);
+if (stack_b->rank == 1)
+    sb(&stack_b);
+
+while (size > 0)
+{
+   temp= pop(&stack_b);
+    pa(temp, &stack_a);
+    size--; 
+}
+
+// while (size > 0)
+// {
+//     if(stack_a->rank == 2 && stack_a->link->rank == 1 )
+//     {
+//         temp= pop(&stack_b);
+//         pa(temp, &stack_a);
+//         size--; 
+//     }
+//     else
+//     {
+//         sb(&stack_b);
+//         temp= pop(&stack_b);
+//         pa(temp, &stack_a);
+//         size--; 
+//     }
+// }
+
+
 printf("//////////////////////Stack_b////////////////////////\n");
 print_data(stack_b);
 
