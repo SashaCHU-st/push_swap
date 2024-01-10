@@ -6,14 +6,14 @@
 /*   By: aheinane <aheinane@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/06 15:16:40 by aheinane          #+#    #+#             */
-/*   Updated: 2024/01/07 13:37:31 by aheinane         ###   ########.fr       */
+/*   Updated: 2024/01/10 14:15:58 by aheinane         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <stdio.h>
 #include "push_swap.h"
 
-void	push(int data, struct node **stack)
+void	push(int rank, struct node **stack)
 {
 	struct node	*new;
 
@@ -23,7 +23,7 @@ void	push(int data, struct node **stack)
 		printf("overflow");
 		exit(1);
 	}
-	new->data = data;
+	new->rank = rank;
 	new->link = NULL;
 	new->link = *stack;
 	*stack = new;
@@ -35,21 +35,21 @@ int	pop(struct node **stack)
 	int			val;
 
 	temp = *stack;
-	val = temp->data;
+	val = temp->rank;
 	*stack = (*stack)->link;
 	free(temp);
 	temp = NULL;
 	return (val);
 }
 
-void	pa(int data, struct node **stack)
+void	pa(int rank, struct node **stack)
 {
-	push(data, stack);
+	push(rank, stack);
 	printf("pa\n");
 }
 
-void	pb(int data, struct node **stack)
+void	pb(int rank, struct node **stack)
 {
-	push(data, stack);
+	push(rank, stack);
 	printf("pb\n");
 }

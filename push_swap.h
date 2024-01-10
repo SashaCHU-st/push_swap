@@ -6,7 +6,7 @@
 /*   By: aheinane <aheinane@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/04 12:50:55 by aheinane          #+#    #+#             */
-/*   Updated: 2024/01/08 18:05:00 by aheinane         ###   ########.fr       */
+/*   Updated: 2024/01/10 12:28:41 by aheinane         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,8 +26,7 @@ int		ft_atoi(const char *str);
 void	append_node(struct node **head, int data);
 void	assign_ranks(struct node **stack);
 void	print_data(struct node *head);
-void sorting(struct node **head);
-int get_nth(struct node* head, int index);
+void	sorting(struct node **head);
 int		ft_lstsize(struct node *lst);
 void	push(int data, struct node **stack);
 void	from_last_to_first(struct node **stack);
@@ -44,6 +43,7 @@ void	rb(struct node **stack);
 void	pa(int data, struct node **stack);
 void	pb(int data, struct node **stack);
 int		pop(struct node **stack);
+void	three_sorting(struct node **stack_a);
 
 
 #endif
