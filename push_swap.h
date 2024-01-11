@@ -6,7 +6,7 @@
 /*   By: aheinane <aheinane@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/04 12:50:55 by aheinane          #+#    #+#             */
-/*   Updated: 2024/01/11 15:30:09 by aheinane         ###   ########.fr       */
+/*   Updated: 2024/01/11 15:47:11 by aheinane         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -46,7 +46,9 @@ int		pop(struct node **stack);
 void	three_sorting(struct node **stack_a);
 void	five_sort(struct node **stack_a, struct node **stack_b);
 void	four_sorting(struct node **stack_a, struct node **stack_b);
-void	two_sorting(struct node *stack);
+void two_sorting(struct node **stack);
+void three_sorting_case(struct node **stack);
+void three_sorting(struct node **stack);
 
 
 #endif
