@@ -6,7 +6,7 @@
 /*   By: aheinane <aheinane@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/06 15:29:05 by aheinane          #+#    #+#             */
-/*   Updated: 2024/01/10 17:00:49 by aheinane         ###   ########.fr       */
+/*   Updated: 2024/01/11 13:17:20 by aheinane         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,7 +21,7 @@ struct node *stack_a = NULL;
 struct node *stack_b = NULL;
 int i = 1;
 int data;
-int temp;
+//int temp;
 int size = 1;
 /// if argc = 3 togda ando simple function
     while (i < argc)
@@ -57,34 +57,21 @@ print_data(stack_a);
 
 /////////////// POP_A FROM STACK_A AND PUSH TO STACK_B  1. 
 printf("////////////////////////Comands////////////////////////\n");
-
-while (size > 3)
-{
-    while (stack_a->rank < 3)
-    {
-        temp= pop(&stack_a);
-        pb(temp, &stack_b);
-        size--;
-    }
-    while (stack_a->rank >= 2)
-    {
-        ra(&stack_a);
-        break;
-    }
-}
-size = ft_lstsize(stack_a);
+if (size == 5)
+    five_sort(&stack_a, &stack_b);
+if (size == 4)
+    four_sorting(&stack_a, &stack_b);
 if (size == 3)
     three_sorting(&stack_a);
-size = ft_lstsize(stack_b);
-if (stack_b->rank == 1)
-    sb(&stack_b);
 
-while (size > 0)
-{
-   temp= pop(&stack_b);
-    pa(temp, &stack_a);
-    size--; 
-}
+
+
+/////sorting for 4
+
+
+// else if (size == 2)
+//     two_sorting(&stack_a);
+
 
 // while (size > 0)
 // {

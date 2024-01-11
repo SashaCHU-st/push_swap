@@ -6,7 +6,7 @@
 /*   By: aheinane <aheinane@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/10 12:10:54 by aheinane          #+#    #+#             */
-/*   Updated: 2024/01/10 16:14:16 by aheinane         ###   ########.fr       */
+/*   Updated: 2024/01/11 13:17:49 by aheinane         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,14 +22,17 @@ void	three_sorting(struct node **stack)
 	int	c;
 
 	size = ft_lstsize(*stack);
+	
 	a = (*stack)->rank;
 	b = (*stack)->link->rank;
 	c = (*stack)->link->link->rank;
 
 	if (size == 2)
 	{
-		if ( c > b)
+		if ( b > c)
 			sa(stack);
+		else
+			return;
 	}
 	else if (size == 3)
 	{
@@ -53,20 +56,78 @@ void	three_sorting(struct node **stack)
 		}
 	}
 }
-// void	two_sorting(struct node **stack)
-// {
-// 	int	a;
-// 	int	b;
+void	two_sorting(struct node **stack)
+{
+	int	size;
+	int	a;
+	int	b;
 
-// 	a = (*stack)->rank;
-// 	b = (*stack)->link->rank;
+	size = ft_lstsize(*stack);
+	
+	a = (*stack)->rank;
+	b = (*stack)->link->rank;
 
-// 	if ( b > a)
-// 		sb(stack);
-// 	else
-// 	{
-// 		int temp= pop(&stack_b);
-//         pb(temp, &stack_a);
-// 	}
-		
-// }
+	if (size == 2)
+	{
+		if ( a > b)
+			sa(stack);
+		else
+			return;
+	}
+	
+}
+void five_sort(struct node **stack_a, struct node **stack_b)
+{
+	int size;
+	int temp;
+	size = ft_lstsize(*stack_a);
+	while (size > 3)
+{
+    while ((*stack_a)->rank < 3)
+    {
+        temp= pop(stack_a);
+        pb(temp, stack_b);
+        size--;
+    }
+    while ((*stack_a)->rank >= 2)
+    {
+        ra(stack_a);
+        break;
+    }
+}
+if (size == 3 )
+    three_sorting(stack_a);
+size = ft_lstsize(*stack_b);
+if ((*stack_b)->rank == 1)
+    sb(stack_b);
+while (size > 0)
+{
+   temp= pop(stack_b);
+    pa(temp, stack_a);
+    size--; 
+}
+}
+void four_sorting(struct node **stack_a, struct node **stack_b)
+{
+	int size;
+	int temp;
+	size = ft_lstsize(*stack_a);
+	while (size > 3)
+	{
+		while ((*stack_a)->rank > 1)
+		{
+			ra(stack_a);
+			break;
+		}
+		while ((*stack_a)->rank < 2)
+		{
+        	temp= pop(stack_a);
+        	pb(temp, stack_b);
+        	size--;
+    	}
+	}
+	if (size == 3 )
+    	three_sorting(stack_a);
+	temp= pop(stack_b);
+    pa(temp, stack_a);
+}
