@@ -6,7 +6,7 @@
 /*   By: aheinane <aheinane@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/06 15:29:05 by aheinane          #+#    #+#             */
-/*   Updated: 2024/01/11 13:17:20 by aheinane         ###   ########.fr       */
+/*   Updated: 2024/01/11 15:17:23 by aheinane         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,7 +23,6 @@ int i = 1;
 int data;
 //int temp;
 int size = 1;
-/// if argc = 3 togda ando simple function
     while (i < argc)
 	{
         data = ft_atoi(argv[i]); 
@@ -33,12 +32,9 @@ int size = 1;
 assign_ranks(&stack_a);
 size = ft_lstsize(stack_a);
 
-printf("\nSIZE:%d\n",size);
-//int tail=get_nth(stack_a, size);
-
-printf("/////////////////////////Original:////////////////////////\n");
-printf("Stack_a \n");
-print_data(stack_a);
+// printf("/////////////////////////Original:////////////////////////\n");
+// printf("Stack_a \n");
+// print_data(stack_a);
 
 //printf("\n");
 
@@ -56,47 +52,22 @@ print_data(stack_a);
 //push_b(data, &stack_a);
 
 /////////////// POP_A FROM STACK_A AND PUSH TO STACK_B  1. 
-printf("////////////////////////Comands////////////////////////\n");
+//printf("////////////////////////Comands////////////////////////\n");
+//printf("\nSIZE:%d\n",size);
 if (size == 5)
     five_sort(&stack_a, &stack_b);
 if (size == 4)
     four_sorting(&stack_a, &stack_b);
-if (size == 3)
+if (size == 2 || size == 3)
     three_sorting(&stack_a);
 
+///////Coment this!!!!!!!!!!!!!!!!!!!!!!
+// printf("//////////////////////Stack_b////////////////////////\n");
+// print_data(stack_b);
 
 
-/////sorting for 4
-
-
-// else if (size == 2)
-//     two_sorting(&stack_a);
-
-
-// while (size > 0)
-// {
-//     if(stack_a->rank == 2 && stack_a->link->rank == 1 )
-//     {
-//         temp= pop(&stack_b);
-//         pa(temp, &stack_a);
-//         size--; 
-//     }
-//     else
-//     {
-//         sb(&stack_b);
-//         temp= pop(&stack_b);
-//         pa(temp, &stack_a);
-//         size--; 
-//     }
-// }
-
-
-printf("//////////////////////Stack_b////////////////////////\n");
-print_data(stack_b);
-
-
-printf("/////////////////////////Stack_a////////////////////////\n");
-print_data(stack_a);
+// printf("/////////////////////////Stack_a////////////////////////\n");
+// print_data(stack_a);
 
 // //////ONE MORE TIME 2. 
 // temp= pop(&stack_a);

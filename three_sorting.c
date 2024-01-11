@@ -6,7 +6,7 @@
 /*   By: aheinane <aheinane@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/10 12:10:54 by aheinane          #+#    #+#             */
-/*   Updated: 2024/01/11 13:17:49 by aheinane         ###   ########.fr       */
+/*   Updated: 2024/01/11 15:32:06 by aheinane         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,56 +25,34 @@ void	three_sorting(struct node **stack)
 	
 	a = (*stack)->rank;
 	b = (*stack)->link->rank;
-	c = (*stack)->link->link->rank;
-
-	if (size == 2)
-	{
-		if ( b > c)
-			sa(stack);
-		else
-			return;
-	}
-	else if (size == 3)
-	{
-		if ((a < b && b < c) || (a > b && b > c))
-			return ;
-		else if (c < b && b > a && a < c)
-		{
-			rra(stack);
-			sa(stack);
-		}
-		else if (c > b && a < c && a > b)
-			sa(stack);
-		else if (c < b && c < a && a < b)
-			rra(stack);
-		else if (b < c && c < a && a > b)
-			ra(stack);
-		else if (c < b && c < a && a > b)
-		{
-			ra(stack);
-			sa(stack);
-		}
-	}
-}
-void	two_sorting(struct node **stack)
-{
-	int	size;
-	int	a;
-	int	b;
-
-	size = ft_lstsize(*stack);
-	
-	a = (*stack)->rank;
-	b = (*stack)->link->rank;
-
 	if (size == 2)
 	{
 		if ( a > b)
 			sa(stack);
-		else
-			return;
+		return;
 	}
-	
+	c = (*stack)->link->link->rank; 
+	if (size == 3)
+	{
+		if (a < b && b < c && a < c)
+			return ;
+		if (c < b && b > a && a < c)
+		{
+			rra(stack);
+			sa(stack);
+		}
+		if (c > b && a < c && a > b)
+			sa(stack);
+		if (c < b && c < a && a < b)
+			rra(stack);
+		if (b < c && c < a && a > b)
+			ra(stack);
+		if (c < b && c < a && a > b)
+		{
+			ra(stack);
+			sa(stack);
+		}
+	}
 }
 void five_sort(struct node **stack_a, struct node **stack_b)
 {
@@ -127,7 +105,7 @@ void four_sorting(struct node **stack_a, struct node **stack_b)
     	}
 	}
 	if (size == 3 )
-    	three_sorting(stack_a);
+		three_sorting(stack_a);
 	temp= pop(stack_b);
     pa(temp, stack_a);
 }
