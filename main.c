@@ -6,7 +6,7 @@
 /*   By: aheinane <aheinane@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/06 15:29:05 by aheinane          #+#    #+#             */
-/*   Updated: 2024/01/11 15:17:23 by aheinane         ###   ########.fr       */
+/*   Updated: 2024/01/11 18:48:03 by aheinane         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,15 +22,16 @@ struct node *stack_b = NULL;
 int i = 1;
 int data;
 //int temp;
-int size = 1;
-    while (i < argc)
+//int size = 1;
+while (i < argc)
 	{
         data = ft_atoi(argv[i]); 
+        printf("hello");
         append_node(&stack_a, data);
         i++;
     }
 assign_ranks(&stack_a);
-size = ft_lstsize(stack_a);
+//size = ft_lstsize(stack_a);
 
 // printf("/////////////////////////Original:////////////////////////\n");
 // printf("Stack_a \n");
@@ -54,20 +55,22 @@ size = ft_lstsize(stack_a);
 /////////////// POP_A FROM STACK_A AND PUSH TO STACK_B  1. 
 //printf("////////////////////////Comands////////////////////////\n");
 //printf("\nSIZE:%d\n",size);
-if (size == 5)
+if (argc == 6)
     five_sort(&stack_a, &stack_b);
-if (size == 4)
+if (argc == 5)
     four_sorting(&stack_a, &stack_b);
-if (size == 2 || size == 3)
+if (argc == 3 || argc == 2)
     three_sorting(&stack_a);
+// if (argc > 6)
+//     sort(&stack_a, &stack_b);
 
 ///////Coment this!!!!!!!!!!!!!!!!!!!!!!
-// printf("//////////////////////Stack_b////////////////////////\n");
-// print_data(stack_b);
+printf("//////////////////////Stack_b////////////////////////\n");
+print_data(stack_b);
 
 
-// printf("/////////////////////////Stack_a////////////////////////\n");
-// print_data(stack_a);
+printf("/////////////////////////Stack_a////////////////////////\n");
+print_data(stack_a);
 
 // //////ONE MORE TIME 2. 
 // temp= pop(&stack_a);
