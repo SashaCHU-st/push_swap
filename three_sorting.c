@@ -6,30 +6,13 @@
 /*   By: aheinane <aheinane@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/10 12:10:54 by aheinane          #+#    #+#             */
-/*   Updated: 2024/01/11 18:15:05 by aheinane         ###   ########.fr       */
+/*   Updated: 2024/01/12 12:47:40 by aheinane         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <stdio.h>
 #include <stdlib.h>
 #include "push_swap.h"
-
-// void more_then_three(struct node **stack_a, struct node **stack_b) {
-//     int size = ft_lstsize(*stack_a);
-
-//     while (size > 3) {
-//         while ((*stack_a)->rank > 1) {
-//             ra(stack_a);
-//             break;
-//         }
-
-//         while ((*stack_a)->rank < 2) {
-//             int temp = pop(stack_a);
-//             pb(temp, stack_b);
-//             size--;
-//         }
-//     }
-// }
 
 void two_sorting(struct node **stack) 
 {

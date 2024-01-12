@@ -7,6 +7,10 @@ SOURCES = push_swap_utils.c \
 			reverse_from_last.c \
 			swap.c \
 			main.c \
+			three_sorting.c \
+			sort.c \
+			
+
 	
 
 OBJ = ${SOURCES:.c=.o}

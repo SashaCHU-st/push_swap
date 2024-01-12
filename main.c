@@ -6,12 +6,13 @@
 /*   By: aheinane <aheinane@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/06 15:29:05 by aheinane          #+#    #+#             */
-/*   Updated: 2024/01/11 18:48:03 by aheinane         ###   ########.fr       */
+/*   Updated: 2024/01/12 16:46:08 by aheinane         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <stdio.h>
 #include <stdlib.h>
+#include <unistd.h>
 #include "push_swap.h"
 
 int main(int argc, char *argv[])
@@ -23,10 +24,15 @@ int i = 1;
 int data;
 //int temp;
 //int size = 1;
+
+
+//write(1,"hello\n", 6);
+
+fflush(stdout);
+
 while (i < argc)
 	{
-        data = ft_atoi(argv[i]); 
-        printf("hello");
+        data = ft_atoi(argv[i]);
         append_node(&stack_a, data);
         i++;
     }
@@ -59,10 +65,10 @@ if (argc == 6)
     five_sort(&stack_a, &stack_b);
 if (argc == 5)
     four_sorting(&stack_a, &stack_b);
-if (argc == 3 || argc == 2)
+if (argc == 4 || argc == 3)
     three_sorting(&stack_a);
-// if (argc > 6)
-//     sort(&stack_a, &stack_b);
+else if (argc > 6)
+    sort(&stack_a, &stack_b);
 
 ///////Coment this!!!!!!!!!!!!!!!!!!!!!!
 printf("//////////////////////Stack_b////////////////////////\n");
