@@ -6,7 +6,7 @@
 /*   By: aheinane <aheinane@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/11 16:58:04 by aheinane          #+#    #+#             */
-/*   Updated: 2024/01/12 16:37:51 by aheinane         ###   ########.fr       */
+/*   Updated: 2024/01/13 12:49:47 by aheinane         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -46,13 +46,13 @@ void sort(struct node **stack_a, struct node **stack_b)
 			pb(temp, stack_b);
 			i--;
 		}
-		else if ((*stack_a)->rank <= (2*groups))
+		else if (groups <= (*stack_a)->rank <= (2*groups))
 		{
 			temp= pop(stack_a);
 			pb(temp, stack_b);
 			i--;
 		}
-		else
+		else if ((groups* 2)<= (*stack_a)->rank <= (3*groups))
 		{
 			temp= pop(stack_a);
 			pb(temp, stack_b);
