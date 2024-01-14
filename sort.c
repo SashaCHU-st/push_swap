@@ -6,7 +6,7 @@
 /*   By: aheinane <aheinane@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/11 16:58:04 by aheinane          #+#    #+#             */
-/*   Updated: 2024/01/14 12:16:25 by aheinane         ###   ########.fr       */
+/*   Updated: 2024/01/14 15:34:00 by aheinane         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -98,31 +98,70 @@ void sort(struct node **stack_a, struct node **stack_b)
 	while (size_b)
 	{
 		int biggest_group = groups_b + remainder;
-		printf("BIG GROUP -> %d",biggest_group);
+		//printf("BIG GROUP -> %d",biggest_group);
 		while(biggest_group)
 		{
-			temp= pop(stack_b);
-			pa(temp, stack_a);
-			biggest_group--;
-			size_b--;
+			if((*stack_b)->rank > (*stack_b)->link->rank )
+			{
+				temp= pop(stack_b);
+				pa(temp, stack_a);
+				biggest_group--;
+				size_b--;
+			}
+			if((*stack_a)->rank > (*stack_a)->link->rank )
+				sa(stack_a);
+			else
+			 	sb(stack_b);
 		}
 			
 		int medium=groups_b;
 		while(medium)
 		{
-			printf("\n");
+			if((*stack_b)->rank > (*stack_b)->link->rank)
+			{
 			temp= pop(stack_b);
 			pa(temp, stack_a);
 			medium--;
 			size_b--;
+			}
+			if((*stack_a)->rank > (*stack_a)->link->rank )
+				sa(stack_a);
+			else
+			 	sb(stack_b);
 		}
 		int small=groups_b;
-		while(small > 0)
+		while(small>0)
 		{
+			if (size_b == 1)
+			{
+				temp= pop(stack_b);
+				printf("2");
+				pa(temp, stack_a);
+				printf("3");
+				size_b=0;
+				break;
+			}
+			if((*stack_b)->rank > (*stack_b)->link->rank)
+			{
 			temp= pop(stack_b);
 			pa(temp, stack_a);
+			printf("1");
 			small--;
 			size_b--;
+			}
+			else if ((*stack_b)->rank < (*stack_b)->link->rank)
+			 	sb(stack_b);
+			if((*stack_a)->rank > (*stack_a)->link->rank )
+				sa(stack_a);
+			// if (size_b == 1)
+			// {
+			// 	temp= pop(stack_b);
+			// 	pa(temp, stack_a);
+			// 	printf("2");
+			// 	small--;
+			// }
+		
+							
 		}
 }
 }
