@@ -6,7 +6,7 @@
 /*   By: aheinane <aheinane@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/06 15:29:05 by aheinane          #+#    #+#             */
-/*   Updated: 2024/01/12 16:46:08 by aheinane         ###   ########.fr       */
+/*   Updated: 2024/01/14 11:36:28 by aheinane         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -68,7 +68,11 @@ if (argc == 5)
 if (argc == 4 || argc == 3)
     three_sorting(&stack_a);
 else if (argc > 6)
+{
     sort(&stack_a, &stack_b);
+    push_back_to_a(&stack_a, &stack_b);
+    
+}
 
 ///////Coment this!!!!!!!!!!!!!!!!!!!!!!
 printf("//////////////////////Stack_b////////////////////////\n");

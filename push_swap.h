@@ -6,7 +6,7 @@
 /*   By: aheinane <aheinane@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/04 12:50:55 by aheinane          #+#    #+#             */
-/*   Updated: 2024/01/12 12:52:29 by aheinane         ###   ########.fr       */
+/*   Updated: 2024/01/14 11:35:37 by aheinane         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -50,8 +50,8 @@ void	four_sorting(struct node **stack_a, struct node **stack_b);
 void	two_sorting(struct node **stack);
 void	three_sorting_case(struct node **stack);
 void	three_sorting(struct node **stack);
-int		the_biggest(struct node **stack_a);
 void	sort(struct node **stack_a, struct node **stack_b);
+void	push_back_to_a(struct node **stack_a, struct node **stack_b);
 
 
 #endif
