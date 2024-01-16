@@ -6,7 +6,7 @@
 /*   By: aheinane <aheinane@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/06 15:34:12 by aheinane          #+#    #+#             */
-/*   Updated: 2024/01/11 15:16:39 by aheinane         ###   ########.fr       */
+/*   Updated: 2024/01/16 17:00:34 by aheinane         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -72,7 +72,7 @@ void	print_data(struct node *head)
 	ptr = head;
 	while (ptr)
 	{
-		printf("%d, %d\n", ptr->data, ptr->rank);
+		printf("%d, %d, %d\n", ptr->data, ptr->rank);
 		ptr = ptr->link;
 	}
 }

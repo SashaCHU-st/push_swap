@@ -6,7 +6,7 @@
 /*   By: aheinane <aheinane@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/10 12:10:54 by aheinane          #+#    #+#             */
-/*   Updated: 2024/01/12 12:47:40 by aheinane         ###   ########.fr       */
+/*   Updated: 2024/01/16 13:50:47 by aheinane         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -82,7 +82,7 @@ void five_sort(struct node **stack_a, struct node **stack_b)
 			pb(temp, stack_b);
 			size--;
 		}
-		while ((*stack_a)->rank >= 2)
+		while ((*stack_a)->rank > 2)
 		{
 			ra(stack_a);
 			break;

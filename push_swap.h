@@ -6,7 +6,7 @@
 /*   By: aheinane <aheinane@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/04 12:50:55 by aheinane          #+#    #+#             */
-/*   Updated: 2024/01/14 11:35:37 by aheinane         ###   ########.fr       */
+/*   Updated: 2024/01/16 17:00:02 by aheinane         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,9 +19,15 @@
 typedef struct node {
 	int			data;
 	int			rank;
-	
+	//int 		pos;
 	struct node	*link;
 }t_node;
+
+typedef struct s_list
+{
+	void			*content;
+	struct s_list	*next;
+}	t_list;
 
 int		ft_atoi(const char *str);
 void	append_node(struct node **head, int data);
@@ -52,6 +58,7 @@ void	three_sorting_case(struct node **stack);
 void	three_sorting(struct node **stack);
 void	sort(struct node **stack_a, struct node **stack_b);
 void	push_back_to_a(struct node **stack_a, struct node **stack_b);
+void	position(struct node **stack);
 
 
 #endif

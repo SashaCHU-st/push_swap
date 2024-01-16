@@ -6,7 +6,7 @@
 /*   By: aheinane <aheinane@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/11 16:58:04 by aheinane          #+#    #+#             */
-/*   Updated: 2024/01/14 15:34:00 by aheinane         ###   ########.fr       */
+/*   Updated: 2024/01/16 16:57:53 by aheinane         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,19 +16,6 @@
 #include <limits.h>
 #include "push_swap.h"
 
-// int the_biggest(struct node **stack)
-// {
-// 	int max;
-	
-// 	max = INT_MIN;
-// 	while ((*stack) != NULL)
-// 	{
-// 		if(max < (*stack)->rank)
-// 			max = (*stack)->rank;
-// 		(*stack)=(*stack)->link;
-// 	}
-// 	return (max);
-// }
 void sort(struct node **stack_a, struct node **stack_b)
 {	
 	int temp;
@@ -88,80 +75,115 @@ void sort(struct node **stack_a, struct node **stack_b)
 	}
 	three_sorting(stack_a);
 }
- void push_back_to_a(struct node **stack_a, struct node **stack_b)
-{
-	int size_b;
-	int temp;
-	size_b=ft_lstsize(*stack_b);
-	int groups_b = size_b / 3;
-	int remainder = size_b % 3;
-	while (size_b)
-	{
-		int biggest_group = groups_b + remainder;
-		//printf("BIG GROUP -> %d",biggest_group);
-		while(biggest_group)
-		{
-			if((*stack_b)->rank > (*stack_b)->link->rank )
-			{
-				temp= pop(stack_b);
-				pa(temp, stack_a);
-				biggest_group--;
-				size_b--;
-			}
-			if((*stack_a)->rank > (*stack_a)->link->rank )
-				sa(stack_a);
-			else
-			 	sb(stack_b);
-		}
+// void	position(struct node **stack)
+// {
+// 	struct node	*temp;
+// 	int		i;
+
+// 	temp = *stack;
+// 	i = 0;
+// 	while (temp)
+// 	{
+// 		temp->pos = i;
+// 		temp = temp->link;
+// 		i++;
+// 	}
+// }
+// void push_back_to_a(struct node **stack_a, struct node **stack_b)
+// {
+//     int size_a;
+//     int size_b;
+//     int temp;
+
+// 	int a = ft_lstlast(*stack_a);
+//     size_a = ft_lstsize(*stack_a);
+//     size_b = ft_lstsize(*stack_b);
+
+//     while (size_b)
+//     {
+//         if (size_b == 1)
+//         {
+//             temp = pop(stack_b);
+//             printf("1");
+//             pa(temp, stack_a);
+//             size_b = 0;
+//             break;
+//         }
+
+//         while (size_b > 1 && ((*stack_b)->rank < (*stack_a)->rank) && ((*stack_b)->rank > (*stack_a)->link==NULL))
+//         {
+//             temp = pop(stack_b);
+//             printf("2");
+//             pa(temp, stack_a);
+//             size_b--;
+// 			size_a++;
+//         }
+
+//         while (size_b > 1 && ((*stack_a)->rank ==NULL < (*stack_a)->rank) && ((*stack_a)->rank ==NULL > (*stack_b)->rank))
+//         {
+//             printf("3");
+//             rra(stack_a);
+//         }
+
+//         while (size_b > 1 && ((*stack_b)->rank < (*stack_a)->rank) && ((*stack_a)->rank > (*stack_a)->rank == NULL))
+//         {
+//             printf("4");
+//             ra(stack_a);
+//         }
+
+//         while (size_b > 1 && ((*stack_b)->rank < (*stack_a)->rank))
+//         {
+//             temp = pop(stack_b);
+//             pa(temp, stack_a);
+//             printf("5");
+//             size_b--;
+// 			size_a++;
+//         }
+
+//         while (size_b > 1 && ((*stack_b)->rank > (*stack_a)->rank))
+//         {
+//             ra(stack_a);
+//             printf("6");
+//         }
+//     }
+// }
 			
-		int medium=groups_b;
-		while(medium)
-		{
-			if((*stack_b)->rank > (*stack_b)->link->rank)
-			{
-			temp= pop(stack_b);
-			pa(temp, stack_a);
-			medium--;
-			size_b--;
-			}
-			if((*stack_a)->rank > (*stack_a)->link->rank )
-				sa(stack_a);
-			else
-			 	sb(stack_b);
-		}
-		int small=groups_b;
-		while(small>0)
-		{
-			if (size_b == 1)
-			{
-				temp= pop(stack_b);
-				printf("2");
-				pa(temp, stack_a);
-				printf("3");
-				size_b=0;
-				break;
-			}
-			if((*stack_b)->rank > (*stack_b)->link->rank)
-			{
-			temp= pop(stack_b);
-			pa(temp, stack_a);
-			printf("1");
-			small--;
-			size_b--;
-			}
-			else if ((*stack_b)->rank < (*stack_b)->link->rank)
-			 	sb(stack_b);
-			if((*stack_a)->rank > (*stack_a)->link->rank )
-				sa(stack_a);
-			// if (size_b == 1)
-			// {
-			// 	temp= pop(stack_b);
-			// 	pa(temp, stack_a);
-			// 	printf("2");
-			// 	small--;
-			// }
-		
-							
-		}
-}
-}
+		// int medium=groups_b;
+		// while(medium)
+		// {
+		// 	if((*stack_b)->rank > (*stack_b)->link->rank)
+		// 	{
+		// 	temp= pop(stack_b);
+		// 	pa(temp, stack_a);
+		// 	medium--;
+		// 	size_b--;
+		// 	}
+		// 	if((*stack_a)->rank > (*stack_a)->link->rank )
+		// 		sa(stack_a);
+		// 	else
+		// 	 	sb(stack_b);
+		// }
+		// int small=groups_b;
+		// while(small>0)
+		// {
+		// 	if (size_b == 1)
+		// 	{
+		// 		temp= pop(stack_b);
+		// 		pa(temp, stack_a);
+		// 		size_b=0;
+		// 		break;
+		// 	}
+		// 	if((*stack_b)->rank > (*stack_b)->link->rank)
+		// 	{
+		// 	temp= pop(stack_b);
+		// 	pa(temp, stack_a);
+		// 	small--;
+		// 	size_b--;
+		// 	}
+		// 	else if ((*stack_b)->rank < (*stack_b)->link->rank)
+		// 	 	sb(stack_b);
+		// 	if((*stack_a)->rank > (*stack_a)->link->rank )
+		// 		sa(stack_a);
+		// }
+// }
+// }
