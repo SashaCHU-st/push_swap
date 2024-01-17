@@ -6,7 +6,7 @@
 /*   By: aheinane <aheinane@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/11 16:58:04 by aheinane          #+#    #+#             */
-/*   Updated: 2024/01/16 16:57:53 by aheinane         ###   ########.fr       */
+/*   Updated: 2024/01/17 17:11:24 by aheinane         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -75,78 +75,61 @@ void sort(struct node **stack_a, struct node **stack_b)
 	}
 	three_sorting(stack_a);
 }
-// void	position(struct node **stack)
-// {
-// 	struct node	*temp;
-// 	int		i;
 
-// 	temp = *stack;
-// 	i = 0;
-// 	while (temp)
-// 	{
-// 		temp->pos = i;
-// 		temp = temp->link;
-// 		i++;
-// 	}
-// }
-// void push_back_to_a(struct node **stack_a, struct node **stack_b)
-// {
-//     int size_a;
-//     int size_b;
-//     int temp;
+void push_back_to_a(struct node **stack_a, struct node **stack_b)
+{
+    int size_a;
+    int size_b;
+    int temp;
 
-// 	int a = ft_lstlast(*stack_a);
-//     size_a = ft_lstsize(*stack_a);
-//     size_b = ft_lstsize(*stack_b);
+    size_a = ft_lstsize(*stack_a);
+    size_b = ft_lstsize(*stack_b);
+	int part= size_b / 2;
 
-//     while (size_b)
-//     {
-//         if (size_b == 1)
-//         {
-//             temp = pop(stack_b);
-//             printf("1");
-//             pa(temp, stack_a);
-//             size_b = 0;
-//             break;
-//         }
-
-//         while (size_b > 1 && ((*stack_b)->rank < (*stack_a)->rank) && ((*stack_b)->rank > (*stack_a)->link==NULL))
-//         {
-//             temp = pop(stack_b);
-//             printf("2");
-//             pa(temp, stack_a);
-//             size_b--;
-// 			size_a++;
-//         }
-
-//         while (size_b > 1 && ((*stack_a)->rank ==NULL < (*stack_a)->rank) && ((*stack_a)->rank ==NULL > (*stack_b)->rank))
-//         {
-//             printf("3");
-//             rra(stack_a);
-//         }
-
-//         while (size_b > 1 && ((*stack_b)->rank < (*stack_a)->rank) && ((*stack_a)->rank > (*stack_a)->rank == NULL))
-//         {
-//             printf("4");
-//             ra(stack_a);
-//         }
-
-//         while (size_b > 1 && ((*stack_b)->rank < (*stack_a)->rank))
-//         {
-//             temp = pop(stack_b);
-//             pa(temp, stack_a);
-//             printf("5");
-//             size_b--;
-// 			size_a++;
-//         }
-
-//         while (size_b > 1 && ((*stack_b)->rank > (*stack_a)->rank))
-//         {
-//             ra(stack_a);
-//             printf("6");
-//         }
-//     }
-// }
+    while (size_b)
+    {	
+		int a = (*stack_a)->rank;
+		int b = a - 1;
+		int c = position(*stack_b, b);
+		
+		if (size_b == 1)
+		{
+				temp= pop(stack_b);
+				pa(temp, stack_a);
+				size_b=0;
+				break;
+		}
+		while (c == b)
+		{
+			while ( c / 2 <= part)
+			{
+				rb(stack_b);
+				if((*stack_b)->rank == b)
+				{
+					temp= pop(stack_b);
+					pa(temp, stack_a);
+					size_b--;
+				}
+				c--;
+			}
+			while ( c / 2 > part)
+				{
+					rrb(stack_b);
+					if(c == 0)
+				{
+					temp= pop(stack_b);
+					pa(temp, stack_a);
+					size_b--;
+				}
+				c--;
+				}
+				
+		}
+		if (c == -1)
+			rra(stack_a);
+			
+	}
+}
 			
 		// int medium=groups_b;
 		// while(medium)

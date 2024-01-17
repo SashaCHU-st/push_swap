@@ -6,7 +6,7 @@
 /*   By: aheinane <aheinane@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/06 15:29:05 by aheinane          #+#    #+#             */
-/*   Updated: 2024/01/16 16:56:06 by aheinane         ###   ########.fr       */
+/*   Updated: 2024/01/17 17:15:59 by aheinane         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -70,9 +70,8 @@ if (argc == 4 || argc == 3)
 else if (argc > 6)
 {
     sort(&stack_a, &stack_b);
-   // position(&stack_b);
-   //push_back_to_a(&stack_a, &stack_b);
-    
+    position(stack_b, 17);
+    //push_back_to_a(&stack_a, &stack_b);
 }
 
 ///////Coment this!!!!!!!!!!!!!!!!!!!!!!

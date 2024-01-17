@@ -6,7 +6,7 @@
 /*   By: aheinane <aheinane@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/06 15:34:12 by aheinane          #+#    #+#             */
-/*   Updated: 2024/01/16 17:00:34 by aheinane         ###   ########.fr       */
+/*   Updated: 2024/01/17 17:25:13 by aheinane         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -60,7 +60,38 @@ void	assign_ranks(struct node **stack)
 		current = current->link;
 	}
 }
+// int	position(struct node *stack, int i)
+// {
+// 	struct node	*temp;
 
+// 	temp = stack;
+// 	while (temp)
+// 	{
+// 		if (temp->rank == i)
+// 			return (i);
+// 		temp = temp->link;
+// 		printf("%d", i);
+// 	}
+// 	return (-1);
+// }
+int position(struct node* stack, int target) 
+{
+    int position = 1;  // Start from the first node
+
+    // Traverse the linked list
+    while (stack != NULL) {
+        // Check if the current node is the target node
+        if (stack->rank == target) 
+            return position;  
+			printf("!!!!!!!!%d \n", position);
+		// Return the position if found
+        // Move to the next node
+        stack = stack->link;
+        position++;
+    }
+	printf("!!!!!!!!%d \n", position);
+    return -1;
+}
 //Delete later
 void	print_data(struct node *head)
 {
@@ -72,7 +103,7 @@ void	print_data(struct node *head)
 	ptr = head;
 	while (ptr)
 	{
-		printf("%d, %d, %d\n", ptr->data, ptr->rank);
+		printf("%d, %d\n", ptr->data, ptr->rank);
 		ptr = ptr->link;
 	}
 }

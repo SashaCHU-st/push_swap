@@ -6,11 +6,10 @@
 /*   By: aheinane <aheinane@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/10 12:10:54 by aheinane          #+#    #+#             */
-/*   Updated: 2024/01/16 13:50:47 by aheinane         ###   ########.fr       */
+/*   Updated: 2024/01/17 13:52:54 by aheinane         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <stdio.h>
 #include <stdlib.h>
 #include "push_swap.h"
 

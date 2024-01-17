@@ -6,7 +6,7 @@
 /*   By: aheinane <aheinane@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/04 12:50:55 by aheinane          #+#    #+#             */
-/*   Updated: 2024/01/16 17:00:02 by aheinane         ###   ########.fr       */
+/*   Updated: 2024/01/17 17:21:32 by aheinane         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,7 +35,8 @@ void	assign_ranks(struct node **stack);
 void	print_data(struct node *head);
 void	sorting(struct node **head);
 int		ft_lstsize(struct node *lst);
-void	push(int data, struct node **stack);
+void	push(int data, struct node **stack_dest);
+int		pop(struct node **stack);
 void	from_last_to_first(struct node **stack);
 void	from_first_to_last(struct node **stack);
 void	rrr(struct node **stack_a, struct node **stack_b);
@@ -49,7 +50,6 @@ void	ra(struct node **stack);
 void	rb(struct node **stack);
 void	pa(int data, struct node **stack);
 void	pb(int data, struct node **stack);
-int		pop(struct node **stack);
 void	three_sorting(struct node **stack_a);
 void	five_sort(struct node **stack_a, struct node **stack_b);
 void	four_sorting(struct node **stack_a, struct node **stack_b);
@@ -57,8 +57,8 @@ void	two_sorting(struct node **stack);
 void	three_sorting_case(struct node **stack);
 void	three_sorting(struct node **stack);
 void	sort(struct node **stack_a, struct node **stack_b);
-void	push_back_to_a(struct node **stack_a, struct node **stack_b);
-void	position(struct node **stack);
+void push_back_to_a(struct node **stack_a, struct node **stack_b);
+int position(struct node* stack, int target) ;
 
 
 #endif
