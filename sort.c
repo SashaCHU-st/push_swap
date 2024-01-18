@@ -6,7 +6,7 @@
 /*   By: aheinane <aheinane@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/11 16:58:04 by aheinane          #+#    #+#             */
-/*   Updated: 2024/01/17 17:11:24 by aheinane         ###   ########.fr       */
+/*   Updated: 2024/01/18 16:19:43 by aheinane         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -85,13 +85,11 @@ void push_back_to_a(struct node **stack_a, struct node **stack_b)
     size_a = ft_lstsize(*stack_a);
     size_b = ft_lstsize(*stack_b);
 	int part= size_b / 2;
-
-    while (size_b)
-    {	
-		int a = (*stack_a)->rank;
-		int b = a - 1;
-		int c = position(*stack_b, b);
-		
+	while (size_b)
+	{
+	int a = (*stack_a)->rank;
+	int b = a - 1;
+	int c = position(*stack_b, b);
 		if (size_b == 1)
 		{
 				temp= pop(stack_b);
@@ -99,37 +97,34 @@ void push_back_to_a(struct node **stack_a, struct node **stack_b)
 				size_b=0;
 				break;
 		}
-		while (c == b)
+		if (c != 1)
 		{
-			while ( c / 2 <= part)
+			while (c <= part && c > 1)
 			{
 				rb(stack_b);
-				if((*stack_b)->rank == b)
-				{
-					temp= pop(stack_b);
-					pa(temp, stack_a);
-					size_b--;
-				}
 				c--;
 			}
-			while ( c / 2 > part)
-				{
-					rrb(stack_b);
-					if(c == 0)
-				{
-					temp= pop(stack_b);
-					pa(temp, stack_a);
-					size_b--;
-				}
+			while ( c > part && c > 1)
+			{
+				rrb(stack_b);
 				c--;
-				}
-				
+			}
 		}
-		if (c == -1)
-			rra(stack_a);
-			
+		if(size_b > 1 && c == 1)
+		{
+			temp= pop(stack_b);
+			pa(temp, stack_a);
+			size_b--;
+		}
 	}
+	// if (c == -1)
+	// 	rra(stack_a);
 }
+
+
+
+
+
 			
 		// int medium=groups_b;
 		// while(medium)

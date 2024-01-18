@@ -6,7 +6,7 @@
 /*   By: aheinane <aheinane@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/06 15:34:12 by aheinane          #+#    #+#             */
-/*   Updated: 2024/01/17 17:25:13 by aheinane         ###   ########.fr       */
+/*   Updated: 2024/01/18 16:13:42 by aheinane         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -60,38 +60,38 @@ void	assign_ranks(struct node **stack)
 		current = current->link;
 	}
 }
-// int	position(struct node *stack, int i)
-// {
-// 	struct node	*temp;
-
-// 	temp = stack;
-// 	while (temp)
-// 	{
-// 		if (temp->rank == i)
-// 			return (i);
-// 		temp = temp->link;
-// 		printf("%d", i);
-// 	}
-// 	return (-1);
-// }
-int position(struct node* stack, int target) 
+int closest_number_in_a(struct node *stack_a, int target)
 {
-    int position = 1;  // Start from the first node
+	int closest = stack_a->rank;
+	int minimum_dif = target - closest;
 
-    // Traverse the linked list
-    while (stack != NULL) {
-        // Check if the current node is the target node
-        if (stack->rank == target) 
-            return position;  
-			printf("!!!!!!!!%d \n", position);
-		// Return the position if found
-        // Move to the next node
-        stack = stack->link;
-        position++;
-    }
-	printf("!!!!!!!!%d \n", position);
-    return -1;
+	while (stack_a)
+	{
+		int diff = target - stack_a->rank;
+		if(diff < minimum_dif)
+		{
+			minimum_dif = diff;
+			closest= stack_a->rank;
+		}
+		stack_a= stack_a->link;
+	}
+	return(closest);
+	
 }
+int position(struct node *stack, int target) 
+{
+	int position = 1;
+
+	while (stack != NULL)
+	{
+		if (stack->rank == target)
+			return (position);
+		stack = stack->link;
+		position++;
+	}
+	return -1;
+}
+
 //Delete later
 void	print_data(struct node *head)
 {
