@@ -6,7 +6,7 @@
 /*   By: aheinane <aheinane@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/06 15:29:05 by aheinane          #+#    #+#             */
-/*   Updated: 2024/01/18 15:37:17 by aheinane         ###   ########.fr       */
+/*   Updated: 2024/01/19 17:26:12 by aheinane         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,7 +28,6 @@ int data;
 
 //write(1,"hello\n", 6);
 
-fflush(stdout);
 
 while (i < argc)
 	{
@@ -70,7 +69,7 @@ if (argc == 4 || argc == 3)
 else if (argc > 6)
 {
     sort(&stack_a, &stack_b);
-    push_back_to_a(&stack_a, &stack_b);
+   push_back_to_a(&stack_a, &stack_b);
 }
 
 ///////Coment this!!!!!!!!!!!!!!!!!!!!!!

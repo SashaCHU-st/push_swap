@@ -6,7 +6,7 @@
 /*   By: aheinane <aheinane@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/04 12:50:55 by aheinane          #+#    #+#             */
-/*   Updated: 2024/01/18 16:19:02 by aheinane         ###   ########.fr       */
+/*   Updated: 2024/01/19 15:56:00 by aheinane         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,7 +18,7 @@
 
 typedef struct node {
 	int			data;
-	int			rank;
+	unsigned int			rank;
 	//int 		pos;
 	struct node	*link;
 }t_node;
@@ -58,7 +58,7 @@ void	three_sorting_case(struct node **stack);
 void	three_sorting(struct node **stack);
 void	sort(struct node **stack_a, struct node **stack_b);
 void	push_back_to_a(struct node **stack_a, struct node **stack_b);
-int		position(struct node* stack, int target) ;
-int		closest_number_in_a(struct node *stack_a, int target);
+int		position(struct node *stack, unsigned int target);
+int		closest_number_in_a(struct node *stack_a, unsigned int target);
 
 #endif

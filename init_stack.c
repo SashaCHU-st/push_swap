@@ -6,7 +6,7 @@
 /*   By: aheinane <aheinane@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/06 15:34:12 by aheinane          #+#    #+#             */
-/*   Updated: 2024/01/18 16:13:42 by aheinane         ###   ########.fr       */
+/*   Updated: 2024/01/19 15:55:33 by aheinane         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -60,15 +60,15 @@ void	assign_ranks(struct node **stack)
 		current = current->link;
 	}
 }
-int closest_number_in_a(struct node *stack_a, int target)
+int closest_number_in_a(struct node *stack_a, unsigned int target)
 {
-	int closest = stack_a->rank;
-	int minimum_dif = target - closest;
+	unsigned int closest = stack_a->rank;
+	unsigned int minimum_dif = closest - target;
 
 	while (stack_a)
 	{
-		int diff = target - stack_a->rank;
-		if(diff < minimum_dif)
+		unsigned int diff = stack_a->rank - target;
+		if(diff < minimum_dif || (diff == minimum_dif && stack_a->rank > closest))
 		{
 			minimum_dif = diff;
 			closest= stack_a->rank;
@@ -78,7 +78,7 @@ int closest_number_in_a(struct node *stack_a, int target)
 	return(closest);
 	
 }
-int position(struct node *stack, int target) 
+int position(struct node *stack, unsigned int target) 
 {
 	int position = 1;
 
