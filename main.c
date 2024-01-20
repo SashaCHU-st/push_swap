@@ -6,7 +6,7 @@
 /*   By: aheinane <aheinane@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/06 15:29:05 by aheinane          #+#    #+#             */
-/*   Updated: 2024/01/20 11:05:11 by aheinane         ###   ########.fr       */
+/*   Updated: 2024/01/20 13:29:56 by aheinane         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,10 +24,6 @@ int i = 1;
 int data;
 //int temp;
 //int size = 1;
-
-
-//write(1,"hello\n", 6);
-
 
 while (i < argc)
 	{
@@ -69,17 +65,16 @@ if (argc == 4 || argc == 3)
 else if (argc > 6)
 {
     sort(&stack_a, &stack_b);
-   // printf("%d", last_node(stack_a));
-   push_back_to_a(&stack_a, &stack_b);
+    push_back_to_a(&stack_a, &stack_b);
 }
 
 ///////Coment this!!!!!!!!!!!!!!!!!!!!!!
-printf("//////////////////////Stack_b////////////////////////\n");
-print_data(stack_b);
+// printf("//////////////////////Stack_b////////////////////////\n");
+// print_data(stack_b);
 
 
-printf("/////////////////////////Stack_a////////////////////////\n");
-print_data(stack_a);
+// printf("/////////////////////////Stack_a////////////////////////\n");
+// print_data(stack_a);
 
 // //////ONE MORE TIME 2. 
 // temp= pop(&stack_a);
