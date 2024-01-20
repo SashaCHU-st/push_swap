@@ -6,7 +6,7 @@
 /*   By: aheinane <aheinane@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/11 16:58:04 by aheinane          #+#    #+#             */
-/*   Updated: 2024/01/19 18:23:12 by aheinane         ###   ########.fr       */
+/*   Updated: 2024/01/20 11:15:00 by aheinane         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -82,6 +82,7 @@ void push_back_to_a(struct node **stack_a, struct node **stack_b)
     int size_b;
     int temp;
 	int d = 1;
+	//unsigned int last = last_node(*stack_a);
 
     size_b = ft_lstsize(*stack_b);
 	while (size_b )
@@ -92,12 +93,6 @@ void push_back_to_a(struct node **stack_a, struct node **stack_b)
     size_a = ft_lstsize(*stack_a);
 	int part = size_a / 2;
 	int remainder = size_a % 2;
-		// if (size_b == 1)
-		// {
-		// 		temp= pop(stack_b);
-		// 		pa(temp, stack_a);
-		// 		size_b=0;
-		// }
 		while(d <= (part + remainder) && d !=  1)
 		{
 			ra(stack_a);
@@ -112,17 +107,27 @@ void push_back_to_a(struct node **stack_a, struct node **stack_b)
 			c = closest_number_in_a(*stack_a, a);
 			d = position(*stack_a, c);
 		}
+		// while ((*stack_a)->rank > last)
+		// 	rra(stack_a);
+		
 		while (d == 1)
 		{
 			temp= pop(stack_b);
 			pa(temp, stack_a);
 			size_b--;
-		//	printf("hello");
 			if (size_b == 0)
 				break;
 			d = 0;
 		}
-	}	
+	}
+	unsigned int first = (*stack_a)->rank;
+	unsigned int last = last_node(*stack_a);
+	while (first > last)
+	{
+		rra(stack_a);
+		first = (*stack_a)->rank;
+		last = last_node(*stack_a);
+	}
 }
 
 

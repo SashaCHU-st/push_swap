@@ -6,7 +6,7 @@
 /*   By: aheinane <aheinane@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/04 12:50:55 by aheinane          #+#    #+#             */
-/*   Updated: 2024/01/19 15:56:00 by aheinane         ###   ########.fr       */
+/*   Updated: 2024/01/20 10:06:02 by aheinane         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -60,5 +60,6 @@ void	sort(struct node **stack_a, struct node **stack_b);
 void	push_back_to_a(struct node **stack_a, struct node **stack_b);
 int		position(struct node *stack, unsigned int target);
 int		closest_number_in_a(struct node *stack_a, unsigned int target);
+int		last_node(struct node* stack);
 
 #endif

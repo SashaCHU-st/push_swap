@@ -6,7 +6,7 @@
 /*   By: aheinane <aheinane@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/06 15:34:12 by aheinane          #+#    #+#             */
-/*   Updated: 2024/01/19 15:55:33 by aheinane         ###   ########.fr       */
+/*   Updated: 2024/01/20 11:04:21 by aheinane         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -77,6 +77,18 @@ int closest_number_in_a(struct node *stack_a, unsigned int target)
 	}
 	return(closest);
 	
+}
+int last_node(struct node *stack)
+{
+	// if (head == NULL) {
+	// 	printf(stderr, "Error: Linked list is empty.\n");
+    //     exit(EXIT_FAILURE);
+    // }
+
+    // Traverse the list until the last node
+    while (stack->link != NULL)
+        stack = stack->link;
+    return (stack->rank);
 }
 int position(struct node *stack, unsigned int target) 
 {
