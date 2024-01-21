@@ -6,7 +6,7 @@
 /*   By: aheinane <aheinane@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/06 15:29:05 by aheinane          #+#    #+#             */
-/*   Updated: 2024/01/20 13:29:56 by aheinane         ###   ########.fr       */
+/*   Updated: 2024/01/21 10:37:17 by aheinane         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,20 +17,22 @@
 
 int main(int argc, char *argv[])
 {
-//struct node *temp;
+
 struct node *stack_a = NULL;
 struct node *stack_b = NULL;
 int i = 1;
 int data;
-//int temp;
-//int size = 1;
 
+if(argc < 2)
+    return (0);
+if(!good_input(argv))
+    write(1, "Error\n", 6);
 while (i < argc)
-	{
-        data = ft_atoi(argv[i]);
-        append_node(&stack_a, data);
-        i++;
-    }
+{
+    data = ft_atoi(argv[i]);
+    append_node(&stack_a, data);
+    i++;
+}
 assign_ranks(&stack_a);
 //size = ft_lstsize(stack_a);
 

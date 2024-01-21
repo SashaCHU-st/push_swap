@@ -6,7 +6,7 @@
 /*   By: aheinane <aheinane@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/06 15:34:12 by aheinane          #+#    #+#             */
-/*   Updated: 2024/01/20 15:02:43 by aheinane         ###   ########.fr       */
+/*   Updated: 2024/01/21 10:38:42 by aheinane         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -94,8 +94,12 @@ int last_node(struct node *stack)
 // {
 // 	int size_a = ft_lstsize(size_a);
 // 	int size_b = ft_lstsize(size_b);
+// 	unsigned int a = (stack_b)->rank;
+// 	unsigned int c = closest_number_in_a(stack_a, a);
+// 	unsigned int pos = position(stack_a, c);
 // 	while(stack_b)
 // 	{
+// 		stack_b->cost = pos;
 		
 // 	}
 	

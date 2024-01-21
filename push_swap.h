@@ -6,7 +6,7 @@
 /*   By: aheinane <aheinane@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/04 12:50:55 by aheinane          #+#    #+#             */
-/*   Updated: 2024/01/20 14:18:35 by aheinane         ###   ########.fr       */
+/*   Updated: 2024/01/21 10:08:06 by aheinane         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,6 +19,7 @@
 typedef struct node {
 	int				data;
 	unsigned int	rank;
+	unsigned int	cost;
 	struct node		*link;
 }t_node;
 
@@ -61,5 +62,9 @@ int		position(struct node *stack, unsigned int target);
 int		closest_number_in_a(struct node *stack_a, unsigned int target);
 int		last_node(struct node* stack);
 void	sort(struct node **stack_a, struct node **stack_b);
+int		is_digit(char c);
+int		is_sign(char c);
+int		if_number (char *argv);
+int		good_input(char **argv);
 
 #endif
