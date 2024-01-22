@@ -6,7 +6,7 @@
 /*   By: aheinane <aheinane@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/21 09:47:22 by aheinane          #+#    #+#             */
-/*   Updated: 2024/01/21 10:09:55 by aheinane         ###   ########.fr       */
+/*   Updated: 2024/01/22 15:13:29 by aheinane         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -50,4 +50,35 @@ int good_input(char **argv)
 			return(0);
 	}
 	return (1);
+}
+
+int cmp(char *str1, char *str2)
+{
+	while (*str1 != '\0' && *str2 != '\0') 
+	{
+		if (*str1 != *str2)
+			return 0; 
+		str1++;
+		str2++;
+	}
+	return (*str1 == '\0' && *str2 == '\0');
+}
+int not_duplicate(char *argv)
+{
+	int i;
+	int j;
+	 
+	i = 1;
+	while (argv[i])
+	{
+		j = 2;
+		while (argv[j])
+		{
+			if(cmp (&argv[i],&argv[j]))
+				return(0);
+			j++;
+		}
+		i++;
+	}
+	return(1);
 }
