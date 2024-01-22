@@ -6,7 +6,7 @@
 /*   By: aheinane <aheinane@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/06 15:34:12 by aheinane          #+#    #+#             */
-/*   Updated: 2024/01/21 10:38:42 by aheinane         ###   ########.fr       */
+/*   Updated: 2024/01/22 11:33:52 by aheinane         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,18 +14,17 @@
 #include <stdlib.h>
 #include "push_swap.h"
 
-void	append_node(struct node **head, int data)
+void	append_node(struct node **stack, int data)
 {
 	struct node	*last;
 	struct node	*new_node;
 
-	last = *head;
+	last = *stack;
 	new_node = malloc(sizeof(struct node));
 	new_node->data = data;
-	new_node->rank = 0;
 	new_node->link = NULL;
-	if (*head == NULL)
-		*head = new_node;
+	if (*stack == NULL)
+		*stack = new_node;
 	else
 	{
 		while (last->link != NULL)
@@ -60,7 +59,7 @@ void	assign_ranks(struct node **stack)
 		current = current->link;
 	}
 }
-int closest_number_in_a(struct node *stack_a, unsigned int target)
+int closest_number_in(struct node *stack_a, unsigned int target)
 {
 	unsigned int closest = stack_a->rank;
 	unsigned int minimum_dif = closest - target;
@@ -80,28 +79,37 @@ int closest_number_in_a(struct node *stack_a, unsigned int target)
 }
 int last_node(struct node *stack)
 {
-	// if (head == NULL) {
-	// 	printf(stderr, "Error: Linked list is empty.\n");
-    //     exit(EXIT_FAILURE);
-    // }
-
-    // Traverse the list until the last node
+	if (stack == NULL)
+		printf("Error: Linked list is empty.\n");
     while (stack->link != NULL)
         stack = stack->link;
     return (stack->rank);
 }
-// void cost(struct node *stack_a,struct node *stack_b)
+void cost(struct node **stack_a,struct node **stack_b)
+{
+	unsigned int size_a = ft_lstsize(*stack_a);
+	unsigned int size_b = ft_lstsize(*stack_b);
+	struct node *b = *stack_b;
+	unsigned int a1 = (*stack_a)->rank;
+	unsigned int c1 = closest_number_in(*stack_b, a1);
+	unsigned int pos_b = position(*stack_b, c1);
+	unsigned int a2 = (*stack_b)->rank;
+	unsigned int c2 = closest_number_in(*stack_a, a2);
+	unsigned int pos_a = position(*stack_a, c2);
+	while(stack_b)
+	{
+		b->cost_b = pos_b;
+		if(pos_b > size_b / 2)
+			b->cost_b = (size_b - pos_b) * (-1);
+		b->cost_a = pos_a;
+		if(pos_a > size_a / 2)
+			b->cost_a = (size_a - pos_a) * (- 1);
+		b = b->link;
+	}
+}
+
+// void cheapest(struct node **stack_a,struct node **stack_b)
 // {
-// 	int size_a = ft_lstsize(size_a);
-// 	int size_b = ft_lstsize(size_b);
-// 	unsigned int a = (stack_b)->rank;
-// 	unsigned int c = closest_number_in_a(stack_a, a);
-// 	unsigned int pos = position(stack_a, c);
-// 	while(stack_b)
-// 	{
-// 		stack_b->cost = pos;
-		
-// 	}
 	
 // }
 int position(struct node *stack, unsigned int target) 

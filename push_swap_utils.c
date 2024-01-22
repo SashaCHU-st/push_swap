@@ -6,7 +6,7 @@
 /*   By: aheinane <aheinane@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/06 15:16:25 by aheinane          #+#    #+#             */
-/*   Updated: 2024/01/10 12:10:06 by aheinane         ###   ########.fr       */
+/*   Updated: 2024/01/22 11:34:32 by aheinane         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -81,22 +81,3 @@ void sorting(struct node **head)
         i=i->link;
 }
 }
-// void printNthFromLast(struct node **head, int N)
-// {
-//     int len = 0, i;
-//     struct node* temp = head;
-
-//     while (temp != NULL) {
-//         temp = temp->link;
-//         len++;
-//     }
-//     if (len < N)
-//         return;
-//     temp = head;
- 
-//     // Get the (len-N+1)th node from the beginning
-//     for (i = 1; i < len - N + 1; i++)
-//         temp = temp->link;
-//     printf("%d", temp->data);
-//     return;
-// }

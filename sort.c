@@ -6,7 +6,7 @@
 /*   By: aheinane <aheinane@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/11 16:58:04 by aheinane          #+#    #+#             */
-/*   Updated: 2024/01/20 14:11:21 by aheinane         ###   ########.fr       */
+/*   Updated: 2024/01/22 11:32:54 by aheinane         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,8 +26,6 @@ void sort(struct node **stack_a, struct node **stack_b)
     unsigned int remainder = (size_a - 3) % 8 ;
     while (count > 3)
     {
-        // while(((*stack_a)->rank == size_a) || ((*stack_a)->rank == size_a - 1) || ((*stack_a)->rank == size_a - 2))
-        //     ra(stack_a);
         while (count)
         {
             if ((*stack_a)->rank <= groups)
@@ -161,7 +159,7 @@ void push_back_to_a(struct node **stack_a, struct node **stack_b)
 	while (size_b )
 	{
 	int a = (*stack_b)->rank;
-	int c = closest_number_in_a(*stack_a, a);
+	int c = closest_number_in(*stack_a, a);
 	int d = position(*stack_a, c);
     size_a = ft_lstsize(*stack_a);
 	int part = size_a / 2;
@@ -170,14 +168,14 @@ void push_back_to_a(struct node **stack_a, struct node **stack_b)
 		{
 			ra(stack_a);
 			a = (*stack_b)->rank;
-			c = closest_number_in_a(*stack_a, a);
+			c = closest_number_in(*stack_a, a);
 			d = position(*stack_a, c);
 		}
 		while(d > part&& d != 1)
 		{
 			rra(stack_a);
 			a = (*stack_b)->rank;
-			c = closest_number_in_a(*stack_a, a);
+			c = closest_number_in(*stack_a, a);
 			d = position(*stack_a, c);
 		}
 		while (d == 1)
@@ -199,79 +197,3 @@ void push_back_to_a(struct node **stack_a, struct node **stack_b)
 		last = last_node(*stack_a);
 	}
 }
-
-
-
-		/////////////OLD VERSION
-	// 	int a = (*stack_b)->rank;
-	// int b = a - 1;
-	// int c = position(*stack_a, b);
-	// 	if (c != 1)
-	// 	{
-	// 		while (c <= part && c > 1)
-	// 		{
-	// 			rb(stack_b);
-	// 			c--;
-	// 		}
-	// 		while ( c > part && c > 1)
-	// 		{
-	// 			rrb(stack_b);
-	// 			c--;
-	// 		}
-	// 	}
-	// 	if(size_b > 1 && c == 1)
-	// 	{
-	// 		temp= pop(stack_b);
-	// 		pa(temp, stack_a);
-	// 		size_b--;
-	// 	}
-	
-	// if (c == -1)
-	// 	rra(stack_a);
-
-
-
-
-
-
-
-			
-		// int medium=groups_b;
-		// while(medium)
-		// {
-		// 	if((*stack_b)->rank > (*stack_b)->link->rank)
-		// 	{
-		// 	temp= pop(stack_b);
-		// 	pa(temp, stack_a);
-		// 	medium--;
-		// 	size_b--;
-		// 	}
-		// 	if((*stack_a)->rank > (*stack_a)->link->rank )
-		// 		sa(stack_a);
-		// 	else
-		// 	 	sb(stack_b);
-		// }
-		// int small=groups_b;
-		// while(small>0)
-		// {
-		// 	if (size_b == 1)
-		// 	{
-		// 		temp= pop(stack_b);
-		// 		pa(temp, stack_a);
-		// 		size_b=0;
-		// 		break;
-		// 	}
-		// 	if((*stack_b)->rank > (*stack_b)->link->rank)
-		// 	{
-		// 	temp= pop(stack_b);
-		// 	pa(temp, stack_a);
-		// 	small--;
-		// 	size_b--;
-		// 	}
-		// 	else if ((*stack_b)->rank < (*stack_b)->link->rank)
-		// 	 	sb(stack_b);
-		// 	if((*stack_a)->rank > (*stack_a)->link->rank )
-		// 		sa(stack_a);
-		// }
-// }
-// }

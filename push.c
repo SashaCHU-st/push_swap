@@ -6,7 +6,7 @@
 /*   By: aheinane <aheinane@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/06 15:16:40 by aheinane          #+#    #+#             */
-/*   Updated: 2024/01/17 13:51:22 by aheinane         ###   ########.fr       */
+/*   Updated: 2024/01/22 10:18:13 by aheinane         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,7 +17,7 @@ void	push(int rank, struct node **stack)
 {
 	struct node	*new;
 
-	new = malloc(sizeof(new));
+	new = malloc(sizeof(struct node));
 	if (new == NULL)
 	{
 		printf("overflow");
@@ -33,7 +33,7 @@ int	pop(struct node **stack)
 {
 	struct node	*temp;
 	int			val;
-
+	
 	temp = *stack;
 	val = temp->rank;
 	*stack = (*stack)->link;
