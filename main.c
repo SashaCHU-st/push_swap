@@ -6,7 +6,7 @@
 /*   By: aheinane <aheinane@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/06 15:29:05 by aheinane          #+#    #+#             */
-/*   Updated: 2024/01/22 17:00:32 by aheinane         ###   ########.fr       */
+/*   Updated: 2024/02/05 13:09:47 by aheinane         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -38,7 +38,7 @@ if(argc < 2)
 // }
 if (argc == 2 )
 {
-   int j = 1; 
+    int j = 0; 
     array = ft_split(argv[i], ' ');
     if (!array)
     {
@@ -52,27 +52,37 @@ if (argc == 2 )
         j++;
     }
     free(array);
+    assign_ranks(&stack_a);
+    if (j == 5)
+        five_sort(&stack_a, &stack_b);
+    if (j == 4)
+        four_sorting(&stack_a, &stack_b);
+    if (j == 3 || j == 2)
+        three_sorting(&stack_a);
+    else if (j > 5)
+    {
+        sort(&stack_a, &stack_b);
+        push_back_to_a(&stack_a, &stack_b);
+    }
 }
-
-int j = 1; 
-while (j < argc)
+if (argc > 2)
 {
-    data = ft_atoi(argv[j]);
+    int j = 1; 
+    while (j < argc)
+    {
+        data = ft_atoi(argv[j]);
         append_node(&stack_a, data);
         j++;
-}
-
+    }
 assign_ranks(&stack_a);
-if (j == 6)
-{
-    five_sort(&stack_a, &stack_b);
-    //printf("helo");
 }
-if (j == 5)
+if (argc == 6)
+    five_sort(&stack_a, &stack_b);
+if (argc == 5)
     four_sorting(&stack_a, &stack_b);
-if (j == 4 || j == 3)
+if (argc == 4 || argc == 3)
     three_sorting(&stack_a);
-else if (j > 6)
+else if (argc > 6)
 {
     sort(&stack_a, &stack_b);
     push_back_to_a(&stack_a, &stack_b);
