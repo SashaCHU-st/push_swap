@@ -6,7 +6,7 @@
 /*   By: aheinane <aheinane@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/06 15:29:05 by aheinane          #+#    #+#             */
-/*   Updated: 2024/02/05 13:09:47 by aheinane         ###   ########.fr       */
+/*   Updated: 2024/02/05 14:19:44 by aheinane         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,12 +31,12 @@ if(argc < 2)
 //     write(1, "Error1\n", 6);
 //     return(0);
 // }
-// if(!&not_duplicate)
-// {
-//     write(1, "Error2\n", 6);
-//     return(0);
-// }
-if (argc == 2 )
+if(not_duplicate(argv))
+{
+    write(1, "Error\n", 6);
+    return(0);
+}
+if (argc == 2)
 {
     int j = 0; 
     array = ft_split(argv[i], ' ');

@@ -6,7 +6,7 @@
 /*   By: aheinane <aheinane@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/04 12:50:55 by aheinane          #+#    #+#             */
-/*   Updated: 2024/01/22 15:51:45 by aheinane         ###   ########.fr       */
+/*   Updated: 2024/02/05 14:16:46 by aheinane         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -68,7 +68,7 @@ int		is_sign(char c);
 int		if_number (char *argv);
 int		good_input(char **argv);
 void	cost(struct node **stack_a,struct node **stack_b);
-int		not_duplicate(char *argv);
+int		not_duplicate(char **argv);
 char	*free_function(char **str);
 int		cmp(char *str1, char *str2);
 int		ft_words(const char *str, char c);

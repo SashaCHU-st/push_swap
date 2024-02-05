@@ -6,7 +6,7 @@
 /*   By: aheinane <aheinane@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/21 09:47:22 by aheinane          #+#    #+#             */
-/*   Updated: 2024/01/22 15:13:29 by aheinane         ###   ########.fr       */
+/*   Updated: 2024/02/05 14:17:26 by aheinane         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -54,16 +54,16 @@ int good_input(char **argv)
 
 int cmp(char *str1, char *str2)
 {
-	while (*str1 != '\0' && *str2 != '\0') 
+	while (*str1 != '\0' && *str2 != '\0' && *str1 == *str2) 
 	{
-		if (*str1 != *str2)
-			return 0; 
+		// if (*str1 != *str2)
+		// 	return 1; 
 		str1++;
 		str2++;
 	}
-	return (*str1 == '\0' && *str2 == '\0');
+	return (*str1 - *str2);
 }
-int not_duplicate(char *argv)
+int not_duplicate(char **argv)
 {
 	int i;
 	int j;
@@ -71,14 +71,14 @@ int not_duplicate(char *argv)
 	i = 1;
 	while (argv[i])
 	{
-		j = 2;
+		j = 1;
 		while (argv[j])
 		{
-			if(cmp (&argv[i],&argv[j]))
-				return(0);
+			if( j != i && cmp (argv[i],argv[j]) == 0)
+				return(1);
 			j++;
 		}
 		i++;
 	}
-	return(1);
+	return(0);
 }
