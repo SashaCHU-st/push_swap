@@ -6,13 +6,14 @@
 /*   By: aheinane <aheinane@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/06 15:29:05 by aheinane          #+#    #+#             */
-/*   Updated: 2024/02/05 14:19:44 by aheinane         ###   ########.fr       */
+/*   Updated: 2024/02/05 18:30:38 by aheinane         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <stdio.h>
 #include <stdlib.h>
 #include <unistd.h>
+# include <limits.h>
 #include "push_swap.h"
 
 int main(int argc, char *argv[])
@@ -26,23 +27,30 @@ int data;
 
 if(argc < 2)
         return (0);
-// if(good_input(argv))
+// long number = ft_atoi(argv[i]);
+// if (number < INT_MIN || number > INT_MAX)
 // {
-//     write(1, "Error1\n", 6);
+//     write(2, "Error\n", 5);
 //     return(0);
 // }
-if(not_duplicate(argv))
+if(!good_input(&argv[i]))
 {
-    write(1, "Error\n", 6);
+    write(2, "Error\n", 5);
     return(0);
 }
+if(not_duplicate(argv))
+{
+    write(2, "Error\n", 5);
+    return(0);
+}
+
 if (argc == 2)
 {
     int j = 0; 
     array = ft_split(argv[i], ' ');
     if (!array)
     {
-        write(2, "Error1\n", 6);
+        write(2, "Error\n", 6);
         exit(1);
     }
     while (array[j])
@@ -64,6 +72,12 @@ if (argc == 2)
         sort(&stack_a, &stack_b);
         push_back_to_a(&stack_a, &stack_b);
     }
+    long number = ft_atoi(argv[i]);
+    if (number < INT_MIN || number > INT_MAX)
+    {
+        write(2, "Error\n", 5);
+        return(0);
+    }
 }
 if (argc > 2)
 {
@@ -73,6 +87,12 @@ if (argc > 2)
         data = ft_atoi(argv[j]);
         append_node(&stack_a, data);
         j++;
+    }
+    long number = ft_atoi(argv[i]);
+    if (number < INT_MIN || number > INT_MAX)
+    {
+        write(2, "Error\n", 5);
+        return(0);
     }
 assign_ranks(&stack_a);
 }

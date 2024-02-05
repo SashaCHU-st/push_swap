@@ -6,7 +6,7 @@
 /*   By: aheinane <aheinane@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/21 09:47:22 by aheinane          #+#    #+#             */
-/*   Updated: 2024/02/05 14:17:26 by aheinane         ###   ########.fr       */
+/*   Updated: 2024/02/05 14:31:28 by aheinane         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -48,6 +48,7 @@ int good_input(char **argv)
 	{
 		if(!if_number(argv[i]))
 			return(0);
+		i++;
 	}
 	return (1);
 }

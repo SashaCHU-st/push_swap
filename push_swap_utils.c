@@ -6,7 +6,7 @@
 /*   By: aheinane <aheinane@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/06 15:16:25 by aheinane          #+#    #+#             */
-/*   Updated: 2024/01/22 15:51:30 by aheinane         ###   ########.fr       */
+/*   Updated: 2024/02/05 18:04:32 by aheinane         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 #include <unistd.h>
 #include "push_swap.h"
 
-int	ft_atoi(const char *str)
+long	ft_atoi(const char *str)
 {
 	size_t	i;
 	long	number;
@@ -31,13 +31,12 @@ int	ft_atoi(const char *str)
 		i++;
 	while (str[i] >= 48 && str[i] <= 57)
 	{
-		number = number * 10 + (str[i] - 48);
-		if (number < 0)
-		{
-			if (sign > 0)
-				return (-1);
-			return (0);
-		}
+		if (number > LONG_MAX / 10)
+			return(LONG_MAX);
+		number = number * 10;
+		if (number > LONG_MAX - (str[i] - '0'))
+			return(LONG_MAX);
+		number = number + str[i] - '0';
 		i++;
 	}
 	return (number * sign);
