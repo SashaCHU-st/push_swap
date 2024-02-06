@@ -6,7 +6,7 @@
 /*   By: aheinane <aheinane@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/06 15:29:05 by aheinane          #+#    #+#             */
-/*   Updated: 2024/02/05 18:30:38 by aheinane         ###   ########.fr       */
+/*   Updated: 2024/02/06 18:38:09 by aheinane         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,7 +16,7 @@
 # include <limits.h>
 #include "push_swap.h"
 
-int main(int argc, char *argv[])
+int main(int argc, char **argv)
 {
 
 struct node *stack_a = NULL;
@@ -27,23 +27,6 @@ int data;
 
 if(argc < 2)
         return (0);
-// long number = ft_atoi(argv[i]);
-// if (number < INT_MIN || number > INT_MAX)
-// {
-//     write(2, "Error\n", 5);
-//     return(0);
-// }
-if(!good_input(&argv[i]))
-{
-    write(2, "Error\n", 5);
-    return(0);
-}
-if(not_duplicate(argv))
-{
-    write(2, "Error\n", 5);
-    return(0);
-}
-
 if (argc == 2)
 {
     int j = 0; 
@@ -55,6 +38,22 @@ if (argc == 2)
     }
     while (array[j])
     {
+        if(good_input(array[j]))
+        {
+            write(2, "Error\n", 5);
+            return(0);
+        }
+        else if(not_duplicate(array))
+        {
+            write(2, "Error7\n", 6);
+            return(0);
+        }
+        long number = ft_atoi(argv[i]);
+        if (number < INT_MIN || number > INT_MAX)
+        {
+            write(2, "Error\n", 5);
+            return(0);
+        }
         data = ft_atoi(array[j]);
         append_node(&stack_a, data);
         j++;
@@ -72,40 +71,44 @@ if (argc == 2)
         sort(&stack_a, &stack_b);
         push_back_to_a(&stack_a, &stack_b);
     }
-    long number = ft_atoi(argv[i]);
-    if (number < INT_MIN || number > INT_MAX)
-    {
-        write(2, "Error\n", 5);
-        return(0);
-    }
 }
-if (argc > 2)
+else
 {
     int j = 1; 
     while (j < argc)
     {
+        if(good_input(argv[i]))
+        {
+            write(2, "Error\n", 5);
+            return(0);
+        }
+        else if(not_duplicate(argv))
+        {
+            write(2, "Error7\n", 6);
+            return(0);
+        }
+        long number = ft_atoi(argv[i]);
+        if (number < INT_MIN || number > INT_MAX)
+        {
+            write(2, "Error\n", 5);
+            return(0);
+        }
         data = ft_atoi(argv[j]);
         append_node(&stack_a, data);
         j++;
     }
-    long number = ft_atoi(argv[i]);
-    if (number < INT_MIN || number > INT_MAX)
+    assign_ranks(&stack_a);
+    if (j == 6)
+        five_sort(&stack_a, &stack_b);
+    if (j == 5)
+       four_sorting(&stack_a, &stack_b);
+    if (j == 4 || j == 3)
+        three_sorting(&stack_a);
+    else if (j > 6)
     {
-        write(2, "Error\n", 5);
-        return(0);
+        sort(&stack_a, &stack_b);
+        push_back_to_a(&stack_a, &stack_b);
     }
-assign_ranks(&stack_a);
-}
-if (argc == 6)
-    five_sort(&stack_a, &stack_b);
-if (argc == 5)
-    four_sorting(&stack_a, &stack_b);
-if (argc == 4 || argc == 3)
-    three_sorting(&stack_a);
-else if (argc > 6)
-{
-    sort(&stack_a, &stack_b);
-    push_back_to_a(&stack_a, &stack_b);
 }
 /////Coment this!!!!!!!!!!!!!!!!!!!!!!
 printf("//////////////////////Stack_b////////////////////////\n");
