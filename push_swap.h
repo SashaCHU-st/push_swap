@@ -6,7 +6,7 @@
 /*   By: aheinane <aheinane@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/04 12:50:55 by aheinane          #+#    #+#             */
-/*   Updated: 2024/02/06 17:48:51 by aheinane         ###   ########.fr       */
+/*   Updated: 2024/02/07 17:15:13 by aheinane         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,7 +35,6 @@ long	ft_atoi(const char *str);
 void	append_node(struct node **head, int data);
 void	assign_ranks(struct node **stack);
 void	print_data(struct node *head);
-void	sorting(struct node **head);
 int		ft_lstsize(struct node *lst);
 void	push(int data, struct node **stack_dest);
 int		pop(struct node **stack);
@@ -72,8 +71,10 @@ int		ft_words(const char *str, char c);
 char	*ft_wd(const char *str, char c);
 void	free_w(size_t i, char **ptr);
 char	**ft_split(char const *s, char c);
-int 	good_input(char *str);
-
+//int not_good_input(char **str);
+int		zeros(char *argv);
+///int not_good_input(char *str);
+int not_good_input(int *str);
 
 
 #endif
