@@ -6,7 +6,7 @@
 /*   By: aheinane <aheinane@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/04 12:50:55 by aheinane          #+#    #+#             */
-/*   Updated: 2024/02/07 17:15:13 by aheinane         ###   ########.fr       */
+/*   Updated: 2024/02/08 12:35:46 by aheinane         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -64,6 +64,7 @@ int		closest_number_in(struct node *stack_a, unsigned int target);
 int		last_node(struct node* stack);
 void	sort(struct node **stack_a, struct node **stack_b);
 void	cost(struct node **stack_a,struct node **stack_b);
+int		duplicated(struct node *stack, int n);
 int		not_duplicate(char **argv);
 char	*free_function(char **str);
 int		cmp(char *str1, char *str2);
@@ -74,7 +75,7 @@ char	**ft_split(char const *s, char c);
 //int not_good_input(char **str);
 int		zeros(char *argv);
 ///int not_good_input(char *str);
-int not_good_input(int *str);
+int not_good_input(char *str);
 
 
 #endif
