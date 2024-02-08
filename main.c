@@ -6,7 +6,7 @@
 /*   By: aheinane <aheinane@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/06 15:29:05 by aheinane          #+#    #+#             */
-/*   Updated: 2024/02/08 14:19:19 by aheinane         ###   ########.fr       */
+/*   Updated: 2024/02/08 14:51:19 by aheinane         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -61,6 +61,8 @@ if (argc == 2)
     }
     free(array);
     assign_ranks(&stack_a);
+    if(is_sorted(stack_a))
+        return(0);
     if (j == 5)
         five_sort(&stack_a, &stack_b);
     if (j == 4)
@@ -99,6 +101,8 @@ else
         j++;
     }
     assign_ranks(&stack_a);
+    if(is_sorted(stack_a))
+        return(0);
     if (j == 6)
         five_sort(&stack_a, &stack_b);
     if (j == 5)

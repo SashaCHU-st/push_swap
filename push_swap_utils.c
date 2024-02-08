@@ -6,7 +6,7 @@
 /*   By: aheinane <aheinane@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/06 15:16:25 by aheinane          #+#    #+#             */
-/*   Updated: 2024/02/05 18:04:32 by aheinane         ###   ########.fr       */
+/*   Updated: 2024/02/08 14:50:40 by aheinane         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -56,30 +56,17 @@ int	ft_lstsize(struct node *lst)
 	}
 	return (i);
 }
+int is_sorted(struct node *stack)
+{
+    while (stack != NULL && stack->link != NULL) 
+	{
+        if (stack->data > stack->link->data)
+            return 0;
+        stack = stack->link;
+    }
+    return 1;
+}
 
-// void sorting(struct node **head)
-// {
-//     ///// swaping first two nodes
-//     struct node * i;
-// 	struct node * j;
-//     int temp;
-//     i = *head;
-//     while (i->link!=NULL)
-//     {
-// 		j=i->link;
-// 		while(j!=NULL)
-// 		{
-// 			if(i->rank > j->rank)
-// 			{
-// 				temp=i->rank;
-// 				i->rank=j->rank;
-// 				j->rank=temp;
-// 			}
-// 			j=j->link;
-// 		}
-//         i=i->link;
-// }
-// }
 char	*free_function(char **str)
 {
 	if (*str)

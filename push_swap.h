@@ -6,7 +6,7 @@
 /*   By: aheinane <aheinane@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/04 12:50:55 by aheinane          #+#    #+#             */
-/*   Updated: 2024/02/08 12:35:46 by aheinane         ###   ########.fr       */
+/*   Updated: 2024/02/08 14:51:01 by aheinane         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,12 +24,6 @@ typedef struct node {
 	unsigned int	cost_b;
 	struct node		*link;
 }t_node;
-
-typedef struct s_list
-{
-	void			*content;
-	struct s_list	*next;
-}	t_list;
 
 long	ft_atoi(const char *str);
 void	append_node(struct node **head, int data);
@@ -65,17 +59,15 @@ int		last_node(struct node* stack);
 void	sort(struct node **stack_a, struct node **stack_b);
 void	cost(struct node **stack_a,struct node **stack_b);
 int		duplicated(struct node *stack, int n);
-int		not_duplicate(char **argv);
 char	*free_function(char **str);
 int		cmp(char *str1, char *str2);
 int		ft_words(const char *str, char c);
 char	*ft_wd(const char *str, char c);
 void	free_w(size_t i, char **ptr);
 char	**ft_split(char const *s, char c);
-//int not_good_input(char **str);
 int		zeros(char *argv);
-///int not_good_input(char *str);
-int not_good_input(char *str);
+int		not_good_input(char *str);
+int		is_sorted(struct node *stack);
 
 
 #endif
