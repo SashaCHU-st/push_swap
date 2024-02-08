@@ -6,7 +6,7 @@
 /*   By: aheinane <aheinane@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/04 12:50:55 by aheinane          #+#    #+#             */
-/*   Updated: 2024/02/08 14:51:01 by aheinane         ###   ########.fr       */
+/*   Updated: 2024/02/08 17:36:04 by aheinane         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -68,6 +68,21 @@ char	**ft_split(char const *s, char c);
 int		zeros(char *argv);
 int		not_good_input(char *str);
 int		is_sorted(struct node *stack);
+int		error();
+void	process_stack(struct node **stack_a, struct node **stack_b, int size);
+void	process_argument(struct node **stack_a, char *arg);
 
+void sort(struct node **stack_a, struct node **stack_b);
+void divide_stack_into_groups(struct node **stack_a, struct node **stack_b, unsigned int size_a, unsigned int groups, unsigned int remainder);
+void push_elements_to_stack_b(struct node **stack_a, struct node **stack_b, unsigned int groups) ;
+void rotate_stack_a_after_push(struct node **stack_a,struct node **stack_b, unsigned int size_a, unsigned int groups, unsigned int remainder);
+
+void push_elements_to_stack_b(struct node **stack_a, struct node **stack_b, unsigned int groups);
+void push_elements_to_stack_b_2(struct node **stack_a, struct node **stack_b, unsigned int groups, unsigned int remainder);
+void push_elements_to_stack_b_3(struct node **stack_a, struct node **stack_b, unsigned int groups, unsigned int remainder);
+
+void process_arguments(int argc, char **argv, struct node **stack_a, struct node **stack_b);
+void process_arguments_with_split(char **argv, struct node **stack_a, struct node **stack_b);
+void process_arguments_without_split(int argc, char **argv, struct node **stack_a, struct node **stack_b);
 
 #endif

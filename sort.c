@@ -6,14 +6,10 @@
 /*   By: aheinane <aheinane@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/11 16:58:04 by aheinane          #+#    #+#             */
-/*   Updated: 2024/01/22 12:53:05 by aheinane         ###   ########.fr       */
+/*   Updated: 2024/02/08 17:08:32 by aheinane         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <stdlib.h>
-#include <unistd.h>
-#include <stdio.h>
-#include <limits.h>
 #include "push_swap.h"
 
 void sort(struct node **stack_a, struct node **stack_b)
@@ -40,36 +36,8 @@ void sort(struct node **stack_a, struct node **stack_b)
                 count--;
             }
         }
-        int count2 = size_a - groups;
-        while (count2)
-        {
-            if ((*stack_a)->rank <= (groups * 2))
-            {
-                temp= pop(stack_a);
-                pb(temp, stack_b);
-                count2--;
-            }
-            else 
-            {
-                ra(stack_a);
-                count2--;
-            }
-        }
-        int count3 = size_a -  (2*groups);
-        while (count3)
-        {
-            if ((*stack_a)->rank <= (groups * 3 + remainder))
-            {
-                temp= pop(stack_a);
-                pb(temp, stack_b);
-                count3--;
-            }
-            else 
-            {
-                ra(stack_a);
-                count3--;
-            }
-        }
+        push_elements_to_stack_b_2(stack_a, stack_b, groups, remainder);
+        push_elements_to_stack_b_3(stack_a, stack_b, groups, remainder);
 		int count4 = size_a -  (3*groups);
         while (count4)
         {

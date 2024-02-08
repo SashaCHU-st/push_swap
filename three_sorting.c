@@ -6,7 +6,7 @@
 /*   By: aheinane <aheinane@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/10 12:10:54 by aheinane          #+#    #+#             */
-/*   Updated: 2024/01/22 11:34:17 by aheinane         ###   ########.fr       */
+/*   Updated: 2024/02/08 17:46:16 by aheinane         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,8 +36,6 @@ void three_sorting_case(struct node **stack)
 	b = (*stack)->link->rank;
 	c = (*stack)->link->link->rank;
 	
-	if (a < b && b < c && a < c)
-		return ;
 	if (c < b && b > a && a < c) 
 	{
 		rra(stack);

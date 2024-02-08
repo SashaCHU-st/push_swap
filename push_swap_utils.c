@@ -6,7 +6,7 @@
 /*   By: aheinane <aheinane@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/06 15:16:25 by aheinane          #+#    #+#             */
-/*   Updated: 2024/02/08 14:50:40 by aheinane         ###   ########.fr       */
+/*   Updated: 2024/02/08 17:51:07 by aheinane         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -76,3 +76,90 @@ char	*free_function(char **str)
 	}
 	return (NULL);
 }
+int error()
+{
+	write(2, "Error\n", 6);
+      return (0);
+}
+void process_stack(struct node **stack_a, struct node **stack_b, int size)
+{
+    assign_ranks(stack_a);
+    if (is_sorted(*stack_a))
+        return;
+    if (size == 6)
+        five_sort(stack_a, stack_b);
+    if (size == 5)
+        four_sorting(stack_a, stack_b);
+    else if (size == 4 || size == 3)
+        three_sorting(stack_a);
+    else if (size > 6) 
+	{
+        sort(stack_a, stack_b);
+        push_back_to_a(stack_a, stack_b);
+    }
+}
+void process_argument(struct node **stack_a, char *arg)
+{
+    int data = ft_atoi(arg);
+    if (not_good_input(arg) || duplicated(*stack_a, data))
+        error();
+    long number = ft_atoi(arg);
+    if (number < INT_MIN || number > INT_MAX)
+        error();
+    append_node(stack_a, data);
+}
+void push_elements_to_stack_b(struct node **stack_a, struct node **stack_b, unsigned int groups)
+{
+	int temp;
+    int size_a = ft_lstsize(*stack_a);
+    int count = size_a;
+
+    while (count > 0) 
+	{
+        if ((*stack_a)->rank <= (groups)) 
+		{
+            temp = pop(stack_a);
+            pb(temp, stack_b);
+        } 
+		else 
+            ra(stack_a);
+        count--;
+    }
+}
+void push_elements_to_stack_b_2(struct node **stack_a, struct node **stack_b, unsigned int groups, unsigned int remainder)
+{
+	int temp;
+    int size_a = ft_lstsize(*stack_a);
+    int count2 = size_a - groups;
+
+    while (count2 > 0) 
+	{
+        if ((*stack_a)->rank <= (groups * 2 + remainder)) 
+		{
+            temp = pop(stack_a);
+            pb(temp, stack_b);
+        } 
+		else 
+            ra(stack_a);
+        count2--;
+    }
+}
+void push_elements_to_stack_b_3(struct node **stack_a, struct node **stack_b, unsigned int groups, unsigned int remainder)
+{
+	int temp;
+    int size_a = ft_lstsize(*stack_a);
+    int count3 = size_a - (2 * groups);
+
+    while (count3 > 0) 
+	{
+        if ((*stack_a)->rank <= (groups * 3 + remainder))
+		{
+            temp = pop(stack_a);
+            pb(temp, stack_b);
+        }
+		else 
+            ra(stack_a);
+        count3--;
+    }
+}
+
