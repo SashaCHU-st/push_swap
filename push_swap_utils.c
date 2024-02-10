@@ -6,7 +6,7 @@
 /*   By: aheinane <aheinane@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/06 15:16:25 by aheinane          #+#    #+#             */
-/*   Updated: 2024/02/10 15:08:28 by aheinane         ###   ########.fr       */
+/*   Updated: 2024/02/10 16:05:49 by aheinane         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -96,13 +96,13 @@ void process_stack(struct node **stack_a, struct node **stack_b, int size)
     else if (size > 6 && size <= 101) 
 	{
         size_a = ft_lstsize(*stack_a);
-        sort_100(stack_a, stack_b, size_a);
+        sort_100(stack_a, stack_b);
         push_back_to_a(stack_a, stack_b);
     }
     else if (size > 101) 
 	{
         size_a = ft_lstsize(*stack_a);
-        sort_500(stack_a, stack_b, size_a);
+        sort_500(stack_a, stack_b);
         push_back_to_a(stack_a, stack_b);
     }
 }
