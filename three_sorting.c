@@ -6,7 +6,7 @@
 /*   By: aheinane <aheinane@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/10 12:10:54 by aheinane          #+#    #+#             */
-/*   Updated: 2024/02/08 17:46:16 by aheinane         ###   ########.fr       */
+/*   Updated: 2024/02/10 14:52:09 by aheinane         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -73,18 +73,9 @@ void five_sort(struct node **stack_a, struct node **stack_b)
 	size = ft_lstsize(*stack_a);
 	while (size > 3)
 	{
-		while ((*stack_a)->rank < 3)
-		{
-			temp= pop(stack_a);
-			pb(temp, stack_b);
-			size--;
-		}
-		while ((*stack_a)->rank > 2)
-		{
-			ra(stack_a);
-			break;
-		}
-}
+		push_less_than_three_to_stack_b(stack_a, stack_b, &size);
+    	rotate_stack_a_greater_than_two(stack_a);
+	}
 if (size == 3)
 	three_sorting(stack_a);
 size = ft_lstsize(*stack_b);
@@ -116,8 +107,27 @@ void four_sorting(struct node **stack_a, struct node **stack_b)
 			size--;
 		}
 	}
-	if (size == 3 )
+	if (size == 3)
 		three_sorting(stack_a);
 	temp= pop(stack_b);
 	pa(temp, stack_a);
+}
+void push_less_than_three_to_stack_b(struct node **stack_a, struct node **stack_b, int *size)
+{
+    int temp;
+    while ((*stack_a)->rank < 3)
+	{
+        temp = pop(stack_a);
+        pb(temp, stack_b);
+        (*size)--;
+    }
+}
+
+void rotate_stack_a_greater_than_two(struct node **stack_a)
+{
+    while ((*stack_a)->rank > 2)
+	{
+        ra(stack_a);
+        break;
+    }
 }

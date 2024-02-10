@@ -6,7 +6,7 @@
 /*   By: aheinane <aheinane@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/06 15:34:12 by aheinane          #+#    #+#             */
-/*   Updated: 2024/02/08 16:25:50 by aheinane         ###   ########.fr       */
+/*   Updated: 2024/02/10 14:27:44 by aheinane         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -85,28 +85,6 @@ int last_node(struct node *stack)
         stack = stack->link;
     return (stack->rank);
 }
-// void cost(struct node **stack_a,struct node **stack_b)
-// {
-// 	unsigned int size_a = ft_lstsize(*stack_a);
-// 	unsigned int size_b = ft_lstsize(*stack_b);
-// 	struct node *b = *stack_b;
-// 	unsigned int a1 = (*stack_a)->rank;
-// 	unsigned int c1 = closest_number_in(*stack_b, a1);
-// 	unsigned int pos_b = position(*stack_b, c1);
-// 	unsigned int a2 = (*stack_b)->rank;
-// 	unsigned int c2 = closest_number_in(*stack_a, a2);
-// 	unsigned int pos_a = position(*stack_a, c2);
-// 	while(stack_b)
-// 	{
-// 		b->cost_b = pos_b;
-// 		if(pos_b > size_b / 2)
-// 			b->cost_b = (size_b - pos_b) * (-1);
-// 		b->cost_a = pos_a;
-// 		if(pos_a > size_a / 2)
-// 			b->cost_a = (size_a - pos_a) * (- 1);
-// 		b = b->link;
-// 	}
-// }
 
 int position(struct node *stack, unsigned int target) 
 {
@@ -119,7 +97,7 @@ int position(struct node *stack, unsigned int target)
 		stack = stack->link;
 		position++;
 	}
-	return -1;
+	return (-1);
 }
 
 // //Delete later

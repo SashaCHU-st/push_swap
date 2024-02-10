@@ -6,7 +6,7 @@
 /*   By: aheinane <aheinane@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/06 15:29:05 by aheinane          #+#    #+#             */
-/*   Updated: 2024/02/08 17:39:36 by aheinane         ###   ########.fr       */
+/*   Updated: 2024/02/10 14:11:35 by aheinane         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,5 +20,6 @@ struct node *stack_b;
 if(argc < 2)
     return (0);
 process_arguments(argc, argv, &stack_a, &stack_b);
+
 return(0);
 }

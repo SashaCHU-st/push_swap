@@ -6,7 +6,7 @@
 /*   By: aheinane <aheinane@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/04 12:50:55 by aheinane          #+#    #+#             */
-/*   Updated: 2024/02/08 17:36:04 by aheinane         ###   ########.fr       */
+/*   Updated: 2024/02/10 15:09:41 by aheinane         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,8 +20,6 @@
 typedef struct node {
 	int				data;
 	unsigned int	rank;
-	unsigned int	cost_a;
-	unsigned int	cost_b;
 	struct node		*link;
 }t_node;
 
@@ -51,16 +49,12 @@ void	four_sorting(struct node **stack_a, struct node **stack_b);
 void	two_sorting(struct node **stack);
 void	three_sorting_case(struct node **stack);
 void	three_sorting(struct node **stack);
-void	sort(struct node **stack_a, struct node **stack_b);
 void	push_back_to_a(struct node **stack_a, struct node **stack_b);
 int		position(struct node *stack, unsigned int target);
 int		closest_number_in(struct node *stack_a, unsigned int target);
 int		last_node(struct node* stack);
-void	sort(struct node **stack_a, struct node **stack_b);
-void	cost(struct node **stack_a,struct node **stack_b);
 int		duplicated(struct node *stack, int n);
 char	*free_function(char **str);
-int		cmp(char *str1, char *str2);
 int		ft_words(const char *str, char c);
 char	*ft_wd(const char *str, char c);
 void	free_w(size_t i, char **ptr);
@@ -71,18 +65,23 @@ int		is_sorted(struct node *stack);
 int		error();
 void	process_stack(struct node **stack_a, struct node **stack_b, int size);
 void	process_argument(struct node **stack_a, char *arg);
+void	adjust_stack_a(struct node **stack_a);
 
-void sort(struct node **stack_a, struct node **stack_b);
-void divide_stack_into_groups(struct node **stack_a, struct node **stack_b, unsigned int size_a, unsigned int groups, unsigned int remainder);
-void push_elements_to_stack_b(struct node **stack_a, struct node **stack_b, unsigned int groups) ;
-void rotate_stack_a_after_push(struct node **stack_a,struct node **stack_b, unsigned int size_a, unsigned int groups, unsigned int remainder);
+void sort_100(struct node **stack_a, struct node **stack_b, unsigned int size_a);
+void sort_500(struct node **stack_a, struct node **stack_b, unsigned int size_a);
 
-void push_elements_to_stack_b(struct node **stack_a, struct node **stack_b, unsigned int groups);
-void push_elements_to_stack_b_2(struct node **stack_a, struct node **stack_b, unsigned int groups, unsigned int remainder);
-void push_elements_to_stack_b_3(struct node **stack_a, struct node **stack_b, unsigned int groups, unsigned int remainder);
 
 void process_arguments(int argc, char **argv, struct node **stack_a, struct node **stack_b);
 void process_arguments_with_split(char **argv, struct node **stack_a, struct node **stack_b);
 void process_arguments_without_split(int argc, char **argv, struct node **stack_a, struct node **stack_b);
 
+
+void push_elements_to_stack_b_n(struct node **stack_a, struct node **stack_b, unsigned int num_groups, unsigned int size_a);
+void sort(struct node **stack_a, struct node **stack_b,unsigned int size_a, unsigned int group_size);
+void process_nodes(struct node **stack_a, struct node **stack_b, unsigned int *count, unsigned int groups, unsigned int i, unsigned int remainder);
+void rotate_to_top(struct node **stack_a, struct node **stack_b, int position);
+int find_closest_number(struct node **stack_a, int rank_b);
+int calculate_position(struct node **stack_a, int closest_number);
+void push_less_than_three_to_stack_b(struct node **stack_a, struct node **stack_b, int *size);
+void rotate_stack_a_greater_than_two(struct node **stack_a);
 #endif
