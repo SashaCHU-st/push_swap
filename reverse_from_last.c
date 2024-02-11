@@ -6,7 +6,7 @@
 /*   By: aheinane <aheinane@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/06 15:17:03 by aheinane          #+#    #+#             */
-/*   Updated: 2024/02/11 10:36:13 by aheinane         ###   ########.fr       */
+/*   Updated: 2024/02/11 11:10:43 by aheinane         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,18 +34,18 @@ void	from_last_to_first(t_node **stack)
 void	rra(t_node **stack)
 {
 	from_last_to_first(stack);
-	printf("rra\n");
+	write(1, "rra\n", 4);
 }
 
 void	rrb(t_node **stack)
 {
 	from_last_to_first(stack);
-	printf("rrb\n");
+	write(1, "rrb\n", 4);
 }
 
 void	rrr(t_node **stack_a, t_node **stack_b)
 {
 	from_last_to_first(stack_a);
 	from_last_to_first(stack_b);
-	printf("rrr\n");
+	write(1, "rrr\n", 4);
 }

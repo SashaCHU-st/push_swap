@@ -6,7 +6,7 @@
 /*   By: aheinane <aheinane@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/06 15:16:40 by aheinane          #+#    #+#             */
-/*   Updated: 2024/02/11 10:48:04 by aheinane         ###   ########.fr       */
+/*   Updated: 2024/02/11 11:08:13 by aheinane         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -44,11 +44,11 @@ int	pop(t_node **stack)
 void	pa(int rank, struct node **stack)
 {
 	push(rank, stack);
-	printf("pa\n");
+	write(1, "pa\n", 3);
 }
 
 void	pb(int rank, struct node **stack)
 {
 	push(rank, stack);
-	printf("pb\n");
+	write(1, "pb\n", 3);
 }

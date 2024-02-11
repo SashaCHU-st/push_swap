@@ -6,7 +6,7 @@
 /*   By: aheinane <aheinane@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/06 15:20:16 by aheinane          #+#    #+#             */
-/*   Updated: 2024/02/11 10:36:32 by aheinane         ###   ########.fr       */
+/*   Updated: 2024/02/11 11:07:34 by aheinane         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,18 +29,18 @@ void	swap(t_node **stack)
 void	sa(t_node **stack)
 {
 	swap(stack);
-	printf("sa\n");
+	write(1, "sa\n", 3);
 }
 
 void	sb(t_node **stack)
 {
 	swap(stack);
-	printf("sb\n");
+	write(1, "sb\n", 3);
 }
 
 void	ss(t_node **stack_a, t_node **stack_b)
 {
 	swap(stack_a);
 	swap(stack_b);
-	printf("ss\n");
+	write(1, "ss\n", 3);
 }
