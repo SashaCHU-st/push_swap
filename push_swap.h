@@ -6,7 +6,7 @@
 /*   By: aheinane <aheinane@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/04 12:50:55 by aheinane          #+#    #+#             */
-/*   Updated: 2024/02/10 17:47:33 by aheinane         ###   ########.fr       */
+/*   Updated: 2024/02/11 09:04:28 by aheinane         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,14 +21,8 @@ typedef struct node {
 	int				data;
 	unsigned int	rank;
 	struct node		*link;
-}t_node;
+}				t_node;
 
-struct ProcessParams {
-    unsigned int *count;
-    unsigned int *groups;
-    unsigned int *remainder;
-    unsigned int *i;
-};
 long	ft_atoi(const char *str);
 void	append_node(struct node **head, int data);
 void	assign_ranks(struct node **stack);
@@ -83,12 +77,11 @@ void process_arguments_without_split(int argc, char **argv, struct node **stack_
 
 
 void push_elements_to_stack_b_n(struct node **stack_a, struct node **stack_b, unsigned int num_groups, unsigned int size_a);
-void sort(struct node **stack_a, struct node **stack_b,size_t size_a, size_t group_size);
+void sort(t_node **stack_a, t_node **stack_b,size_t size_a, size_t group);
 void process_nodes(struct node **stack_a, struct node **stack_b, unsigned int *count, unsigned int groups, unsigned int i, unsigned int remainder);
 void rotate_to_top(struct node **stack_a, struct node **stack_b, int position);
 int find_closest_number(struct node **stack_a, int rank_b);
 int calculate_position(struct node **stack_a, int closest_number);
 void push_less_than_three_to_stack_b(struct node **stack_a, struct node **stack_b, int *size);
 void rotate_stack_a_greater_than_two(struct node **stack_a);
-void sort_within_group(struct node **stack_a, struct node **stack_b, unsigned int group_size);
 #endif

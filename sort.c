@@ -6,13 +6,13 @@
 /*   By: aheinane <aheinane@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/11 16:58:04 by aheinane          #+#    #+#             */
-/*   Updated: 2024/02/10 17:49:06 by aheinane         ###   ########.fr       */
+/*   Updated: 2024/02/10 17:53:18 by aheinane         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-void sort(t_node **stack_a, t_node **stack_b,size_t size_a, size_t group)
+void	sort(t_node **stack_a, t_node **stack_b,size_t size_a, size_t group)
 {
 	int temp;
 	unsigned int count;
@@ -41,19 +41,19 @@ void sort(t_node **stack_a, t_node **stack_b,size_t size_a, size_t group)
 	three_sorting(stack_a);
 }
 
-void sort_100(struct node **stack_a, struct node **stack_b)
+void	sort_100(struct node **stack_a, struct node **stack_b)
 {
 	unsigned int size_a = ft_lstsize(*stack_a);
 	sort(stack_a, stack_b,size_a, 8);
 }
 
-void sort_500(struct node **stack_a, struct node **stack_b)
+void	sort_500(struct node **stack_a, struct node **stack_b)
 {
 	unsigned int size_a = ft_lstsize(*stack_a);
 	sort(stack_a, stack_b,size_a, 10);
 }
 
-void rotate_to_top(struct node **stack_a,struct node **stack_b, int position)
+void	rotate_to_top(struct node **stack_a,struct node **stack_b, int position)
 {
 	int close;
 	int part;
@@ -71,20 +71,20 @@ void rotate_to_top(struct node **stack_a,struct node **stack_b, int position)
 		position = calculate_position(stack_a, close);
 	}
 }
-int find_closest_number(struct node **stack_a, int rank_b)
+int	find_closest_number(struct node **stack_a, int rank_b)
 {
 	int number;
 	number = closest_number_in(*stack_a, rank_b);
 	return (number);
 }
-int calculate_position(struct node **stack_a, int closest_number)
+int	calculate_position(struct node **stack_a, int closest_number)
 {
 	int pos;
 	pos = position(*stack_a, closest_number);
 	return (pos);
 }
 
-void push_back_to_a(struct node **stack_a, struct node **stack_b)
+void	push_back_to_a(struct node **stack_a, struct node **stack_b)
 {
 	int size_b;
 	int temp;
