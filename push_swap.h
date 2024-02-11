@@ -6,7 +6,7 @@
 /*   By: aheinane <aheinane@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/04 12:50:55 by aheinane          #+#    #+#             */
-/*   Updated: 2024/02/11 11:11:50 by aheinane         ###   ########.fr       */
+/*   Updated: 2024/02/11 11:55:13 by aheinane         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -102,5 +102,8 @@ void	rotate_stack_a_greater_than_two(t_node **stack_a);
 void	process_stack(t_node **stack_a, t_node **stack_b, int size);
 void	process_argument(t_node **stack_a, char *arg);
 void	adjust_stack_a(t_node **stack_a);
+
+//free_stack
+void	free_stack(t_node **stack);
 
 #endif
