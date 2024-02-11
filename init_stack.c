@@ -6,15 +6,13 @@
 /*   By: aheinane <aheinane@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/06 15:34:12 by aheinane          #+#    #+#             */
-/*   Updated: 2024/02/11 09:06:17 by aheinane         ###   ########.fr       */
+/*   Updated: 2024/02/11 10:33:56 by aheinane         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <stdio.h>
-#include <stdlib.h>
 #include "push_swap.h"
 
-void	append_node(struct node **stack, int data)
+void	append_node(t_node **stack, int data)
 {
 	struct node	*last;
 	struct node	*new_node;
@@ -33,7 +31,7 @@ void	append_node(struct node **stack, int data)
 	}
 }
 
-void	assign_ranks(struct node **stack)
+void	assign_ranks(t_node **stack)
 {
 	struct node	*current;
 	struct node	*index;
@@ -59,12 +57,13 @@ void	assign_ranks(struct node **stack)
 		current = current->link;
 	}
 }
-int	closest_number_in(struct node *stack_a, unsigned int target)
+
+int	closest_number_in(t_node *stack_a, unsigned int target)
 {
 	unsigned int	closest;
 	unsigned int	min_dif;
 	unsigned int	diff;
-	
+
 	closest = stack_a->rank;
 	min_dif = closest - target;
 	while (stack_a)
@@ -79,19 +78,21 @@ int	closest_number_in(struct node *stack_a, unsigned int target)
 	}
 	return (closest);
 }
-int last_node(struct node *stack)
+
+int	last_node(t_node *stack)
 {
 	if (stack == NULL)
-		printf("Error: Linked list is empty.\n");
-    while (stack->link != NULL)
-        stack = stack->link;
-    return (stack->rank);
+		write(1, "Error: Linked list is empty.\n", 30);
+	while (stack->link != NULL)
+		stack = stack->link;
+	return (stack->rank);
 }
 
-int position(struct node *stack, unsigned int target) 
+int	position(t_node *stack, unsigned int target)
 {
-	int position = 1;
+	int		position;
 
+	position = 1;
 	while (stack != NULL)
 	{
 		if (stack->rank == target)
@@ -101,19 +102,3 @@ int position(struct node *stack, unsigned int target)
 	}
 	return (-1);
 }
-
-// //Delete later
-// void	print_data(struct node *head)
-// {
-// 	struct node	*ptr;
-
-// 	if (head == NULL)
-// 		printf("Empty");
-// 	ptr = NULL;
-// 	ptr = head;
-// 	while (ptr)
-// 	{
-// 		printf("%d, %d\n", ptr->data, ptr->rank);
-// 		ptr = ptr->link;
-// 	}
-// }

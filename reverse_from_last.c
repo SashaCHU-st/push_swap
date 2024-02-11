@@ -6,14 +6,13 @@
 /*   By: aheinane <aheinane@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/06 15:17:03 by aheinane          #+#    #+#             */
-/*   Updated: 2024/01/07 13:39:36 by aheinane         ###   ########.fr       */
+/*   Updated: 2024/02/11 10:36:13 by aheinane         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <stdio.h>
 #include "push_swap.h"
 
-void	from_last_to_first(struct node **stack)
+void	from_last_to_first(t_node **stack)
 {
 	struct node	*last;
 	struct node	*ptr1;
@@ -32,19 +31,19 @@ void	from_last_to_first(struct node **stack)
 	*stack = ptr1;
 }
 
-void	rra(struct node **stack)
+void	rra(t_node **stack)
 {
 	from_last_to_first(stack);
 	printf("rra\n");
 }
 
-void	rrb(struct node **stack)
+void	rrb(t_node **stack)
 {
 	from_last_to_first(stack);
 	printf("rrb\n");
 }
 
-void	rrr(struct node **stack_a, struct node **stack_b)
+void	rrr(t_node **stack_a, t_node **stack_b)
 {
 	from_last_to_first(stack_a);
 	from_last_to_first(stack_b);

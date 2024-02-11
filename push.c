@@ -6,21 +6,20 @@
 /*   By: aheinane <aheinane@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/06 15:16:40 by aheinane          #+#    #+#             */
-/*   Updated: 2024/01/22 10:18:13 by aheinane         ###   ########.fr       */
+/*   Updated: 2024/02/11 10:48:04 by aheinane         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <stdio.h>
 #include "push_swap.h"
 
-void	push(int rank, struct node **stack)
+void	push(int rank, t_node **stack)
 {
 	struct node	*new;
 
 	new = malloc(sizeof(struct node));
 	if (new == NULL)
 	{
-		printf("overflow");
+		write(1, "overflow", 8);
 		exit(1);
 	}
 	new->rank = rank;
@@ -29,11 +28,11 @@ void	push(int rank, struct node **stack)
 	*stack = new;
 }
 
-int	pop(struct node **stack)
+int	pop(t_node **stack)
 {
 	struct node	*temp;
 	int			val;
-	
+
 	temp = *stack;
 	val = temp->rank;
 	*stack = (*stack)->link;

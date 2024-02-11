@@ -6,7 +6,7 @@
 /*   By: aheinane <aheinane@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/04 12:50:55 by aheinane          #+#    #+#             */
-/*   Updated: 2024/02/11 09:04:28 by aheinane         ###   ########.fr       */
+/*   Updated: 2024/02/11 10:49:57 by aheinane         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,72 +16,93 @@
 # include <stdlib.h>
 # include <unistd.h>
 # include <limits.h>
+///// DELETE THIS
+#include <stdio.h>
 
-typedef struct node {
+typedef struct node
+{
 	int				data;
 	unsigned int	rank;
 	struct node		*link;
 }				t_node;
 
-long	ft_atoi(const char *str);
-void	append_node(struct node **head, int data);
-void	assign_ranks(struct node **stack);
-void	print_data(struct node *head);
-int		ft_lstsize(struct node *lst);
-void	push(int data, struct node **stack_dest);
-int		pop(struct node **stack);
-void	from_last_to_first(struct node **stack);
-void	from_first_to_last(struct node **stack);
-void	rrr(struct node **stack_a, struct node **stack_b);
-void	rr(struct node **stack_a, struct node **stack_b);
-void	ss(struct node **stack_a, struct node **stack_b);
-void	sa(struct node **stack_a);
-void	sb(struct node **stack_b);
-void	rra(struct node **stack);
-void	rrb(struct node **stack);
-void	ra(struct node **stack);
-void	rb(struct node **stack);
-void	pa(int data, struct node **stack);
-void	pb(int data, struct node **stack);
-void	three_sorting(struct node **stack_a);
-void	five_sort(struct node **stack_a, struct node **stack_b);
-void	four_sorting(struct node **stack_a, struct node **stack_b);
-void	two_sorting(struct node **stack);
-void	three_sorting_case(struct node **stack);
-void	three_sorting(struct node **stack);
-void	push_back_to_a(struct node **stack_a, struct node **stack_b);
-int		position(struct node *stack, unsigned int target);
-int		closest_number_in(struct node *stack_a, unsigned int target);
-int		last_node(struct node* stack);
-int		duplicated(struct node *stack, int n);
-char	*free_function(char **str);
+/// init stack
+void	append_node(t_node **stack, int data);
+void	assign_ranks(t_node **stack);
+int		closest_number_in(t_node *stack_a, unsigned int target);
+int		last_node(t_node *stack);
+int		position(t_node *stack, unsigned int target);
+
+///split
 int		ft_words(const char *str, char c);
 char	*ft_wd(const char *str, char c);
 void	free_w(size_t i, char **ptr);
 char	**ft_split(char const *s, char c);
-int		zeros(char *argv);
+
+///process arguments
+void	sorting(int argc, char **argv, t_node **stack_a, t_node **stack_b);
+void	arg_split(char **argv, t_node **stack_a, t_node **stack_b);
+void	arg_no_split(int argc, char **argv, t_node **stack_a, t_node **stack_b);
+
+///input checker
+int		duplicated(t_node *stack, int n);
+int		is_sign(char c);
 int		not_good_input(char *str);
-int		is_sorted(struct node *stack);
-int		error();
-void	process_stack(struct node **stack_a, struct node **stack_b, int size);
-void	process_argument(struct node **stack_a, char *arg);
-void	adjust_stack_a(struct node **stack_a);
 
-void sort_100(struct node **stack_a, struct node **stack_b);
-void sort_500(struct node **stack_a, struct node **stack_b);
+//push_swap_utils
+long	ft_atoi(const char *str);
+int		ft_lstsize(t_node *lst);
+int		is_sorted(t_node *stack);
+char	*free_function(char **str);///?????
+int		error(void);
 
+//push
+void	push(int rank, t_node **stack);
+int		pop(t_node **stack);
+void	pa(int rank, t_node **stack);
+void	pb(int rank, t_node **stack);
 
-void process_arguments(int argc, char **argv, struct node **stack_a, struct node **stack_b);
-void process_arguments_with_split(char **argv, struct node **stack_a, struct node **stack_b);
-void process_arguments_without_split(int argc, char **argv, struct node **stack_a, struct node **stack_b);
+///swap
+void	swap(t_node **stack);
+void	sa(t_node **stack);
+void	sb(t_node **stack);
+void	ss(t_node **stack_a, t_node **stack_b);
 
+///reverse frirst
+void	from_first_to_last(t_node **stack);
+void	ra(t_node **stack);
+void	rb(t_node **stack);
+void	rr(t_node **stack_a, t_node **stack_b);
 
-void push_elements_to_stack_b_n(struct node **stack_a, struct node **stack_b, unsigned int num_groups, unsigned int size_a);
-void sort(t_node **stack_a, t_node **stack_b,size_t size_a, size_t group);
-void process_nodes(struct node **stack_a, struct node **stack_b, unsigned int *count, unsigned int groups, unsigned int i, unsigned int remainder);
-void rotate_to_top(struct node **stack_a, struct node **stack_b, int position);
-int find_closest_number(struct node **stack_a, int rank_b);
-int calculate_position(struct node **stack_a, int closest_number);
-void push_less_than_three_to_stack_b(struct node **stack_a, struct node **stack_b, int *size);
-void rotate_stack_a_greater_than_two(struct node **stack_a);
+//reverse from last
+void	from_last_to_first(t_node **stack);
+void	rra(t_node **stack);
+void	rrb(t_node **stack);
+void	rrr(t_node **stack_a, t_node **stack_b);
+
+///soort
+void	sort(t_node **stack_a, t_node **stack_b, size_t size_a, size_t group);
+void	sort_100(t_node **stack_a, t_node **stack_b);
+void	sort_500(t_node **stack_a, t_node **stack_b);
+
+//sorting algo
+void	rotate_to_top(t_node **stack_a, t_node **stack_b, int position);
+int		find_closest_number(t_node **stack_a, int rank_b);
+int		calculate_position(t_node **stack_a, int closest_number);
+void	push_back_to_a(t_node **stack_a, t_node **stack_b);
+
+//r=three soruting
+void	two_sorting(t_node **stack);
+void	three_sorting_case(t_node **stack);
+void	three_sorting(t_node **stack);
+void	five_sort(t_node **stack_a, t_node **stack_b);
+void	four_sorting(t_node **stack_a, t_node **stack_b);
+
+//helping function
+void	push_less_than_three_tob(t_node **stack_a, t_node **stack_b, int *size);
+void	rotate_stack_a_greater_than_two(t_node **stack_a);
+void	process_stack(t_node **stack_a, t_node **stack_b, int size);
+void	process_argument(t_node **stack_a, char *arg);
+void	adjust_stack_a(t_node **stack_a);
+
 #endif
