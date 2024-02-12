@@ -6,13 +6,13 @@
 /*   By: aheinane <aheinane@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/06 15:16:25 by aheinane          #+#    #+#             */
-/*   Updated: 2024/02/11 10:47:12 by aheinane         ###   ########.fr       */
+/*   Updated: 2024/02/11 12:17:38 by aheinane         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-long	ft_atoi(const char *str)
+long	ft_atol(const char *str)
 {
 	size_t	i;
 	long	number;
@@ -65,16 +65,6 @@ int	is_sorted(t_node *stack)
 		stack = stack->link;
 	}
 	return (1);
-}
-
-char	*free_function(char **str)
-{
-	if (*str)
-	{
-		free(*str);
-		*str = NULL;
-	}
-	return (NULL);
 }
 
 int	error(void)

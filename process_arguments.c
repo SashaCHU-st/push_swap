@@ -6,7 +6,7 @@
 /*   By: aheinane <aheinane@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/08 17:38:29 by aheinane          #+#    #+#             */
-/*   Updated: 2024/02/11 10:48:15 by aheinane         ###   ########.fr       */
+/*   Updated: 2024/02/12 13:06:09 by aheinane         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,7 +34,7 @@ void	arg_split(char **argv, t_node **stack_a, t_node **stack_b)
 		process_argument(stack_a, array[j]);
 		j++;
 	}
-	free(array);
+	free_array(array);
 	process_stack(stack_a, stack_b, j + 1);
 }
 

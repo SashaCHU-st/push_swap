@@ -6,7 +6,7 @@
 /*   By: aheinane <aheinane@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/04 12:50:55 by aheinane          #+#    #+#             */
-/*   Updated: 2024/02/11 11:55:13 by aheinane         ###   ########.fr       */
+/*   Updated: 2024/02/12 12:00:20 by aheinane         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -48,10 +48,9 @@ int		is_sign(char c);
 int		not_good_input(char *str);
 
 //push_swap_utils
-long	ft_atoi(const char *str);
+long	ft_atol(const char *str);
 int		ft_lstsize(t_node *lst);
 int		is_sorted(t_node *stack);
-char	*free_function(char **str);///?????
 int		error(void);
 
 //push
@@ -105,5 +104,6 @@ void	adjust_stack_a(t_node **stack_a);
 
 //free_stack
 void	free_stack(t_node **stack);
+void	free_array(char **array);
 
 #endif

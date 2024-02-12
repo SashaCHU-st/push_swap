@@ -6,7 +6,7 @@
 /*   By: aheinane <aheinane@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/11 09:43:36 by aheinane          #+#    #+#             */
-/*   Updated: 2024/02/11 10:49:22 by aheinane         ###   ########.fr       */
+/*   Updated: 2024/02/11 12:18:13 by aheinane         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -53,8 +53,8 @@ void	process_argument(t_node **stack_a, char *arg)
 	int		data;
 	long	number;
 
-	number = ft_atoi(arg);
-	data = ft_atoi(arg);
+	number = ft_atol(arg);
+	data = ft_atol(arg);
 	if (not_good_input(arg) || duplicated(*stack_a, data))
 		error();
 	if (number < INT_MIN || number > INT_MAX)

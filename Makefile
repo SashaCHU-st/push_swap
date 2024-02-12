@@ -1,28 +1,31 @@
-NAME = push_swap.a
+NAME = push_swap
 CC = cc
 CFLAGS = -Wall -Wextra -Werror
-SOURCES = push_swap_utils.c \
+SOURCES = free_stack.c \
+			ft_split.c \
+			helping_functions.c \
+			input_checker.c \
+			init_stack.c \
+			main.c \
+			process_arguments.c \
+			push_swap_utils.c \
 			push.c \
 			reverse_from_first.c \
 			reverse_from_last.c \
-			swap.c \
-			main.c \
-			three_sorting.c \
 			sort.c \
+			sorting_algo.c \
+			swap.c \
+			three_sorting.c 
 			
-
-	
-
 OBJ = ${SOURCES:.c=.o}
 
 all: $(NAME)
 
 $(NAME): $(OBJ)
-	ar rc $(NAME) $(OBJ)
-	ranlib $(NAME)
+	$(CC) $(CFLAGS) $(OBJ) -o $(NAME)
 
-%.o: %.c
-	$(CC) $(CFLAGS) -g -c $< -o $@
+%.o:%.c
+	$(CC) $(CFLAGS) -c $^ -o $@
 
 clean:
 	rm -rf $(OBJ)

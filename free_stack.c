@@ -6,7 +6,7 @@
 /*   By: aheinane <aheinane@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/11 11:54:34 by aheinane          #+#    #+#             */
-/*   Updated: 2024/02/11 11:59:31 by aheinane         ###   ########.fr       */
+/*   Updated: 2024/02/12 12:03:16 by aheinane         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,4 +27,25 @@ void	free_stack(t_node **stack)
 		current = temp;
 	}
 	*stack = NULL;
+}
+
+void	free_array(char **array)
+{
+	int	i;
+
+	i = 0;
+	while (array[i])
+	{
+		if (array[i] != NULL)
+		{
+			free(array[i]);
+			array[i] = NULL;
+			i++;
+		}
+	}
+	if (array != NULL)
+	{
+		free(array);
+		array = NULL;
+	}
 }
