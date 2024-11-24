@@ -1,6 +1,9 @@
 # Push Swap Sorting Project
 Fun project focuses on sorting a given set of numbers in ascending order. The numbers are initially placed in **A stack**, and you can use a **B stack** as a helper. The goal is to achieve the highest score by performing the minimum number of actions.
 
+## Visulaizer
+
+
 ## Allowed operations:
 - sa (swap a): Swap the first 2 elements at the top of **stack A**.
 - sb (swap b): Swap the first 2 elements at the top of **stack B**.
